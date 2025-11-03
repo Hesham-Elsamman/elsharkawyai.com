@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="src/imgs/logo.png" type="image/x-icon" />
+    <link href="src/output.css" rel="stylesheet" />
+    <link href="src/style.css" rel="stylesheet" />
+    <title>Sharkawy Ai</title>
+  </head>
+  <body>
+    <div class="background -z-10">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <main id="app">
+      <!-- logo -->
+      <a
+        role="banner"
+        rel="noopener"
+        href="https://www.youtube.com/channel/UCzcQeU7DxtEyw40LzC0-w6Q "
+        target="_blank"
+        class="logo fixed top-10 right-0 me-5 h-20 w-20 floting check"
+      ></a>
+
+      <!-- nav -->
+      <div
+        class="z-50 fixed top-1/2 right-0 transform -translate-y-1/2 flex flex-col items-end space-y-2"
+      >
+        <a
+          class="nav-button nav-button-active me-3 type1"
+          @click.prevent="scrollTo('home')"
+          href="#home"
+          id="homeBtn"
+          ><span class="btn-txt text-xs md:text-md">Home</span></a
+        >
+        <a
+          class="nav-button me-3 type1"
+          @click.prevent="scrollTo('projects')"
+          href="#projects"
+          id="projectsBtn"
+          ><span class="btn-txt text-xs md:text-md">projects</span></a
+        >
+      </div>
+
+      <!-- home -->
+      <section id="home" class="px-5 md:px-20 py-5 md:py-15">
+        <h1
+          class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
+        >
+          ADHAM SHARKAWY AI
+        </h1>
+        <p
+          class="hero-title text-sm! md:text-lg lg:text-xl capitalize select-none"
+        >
+          I'm
+          <span
+            class="typewrite text-xs! md:text-md! lg:text-xl! capitalize"
+            data-period="2000"
+            data-type='[ "Video Editing", "AI Video Creation", "Love Design", "Creative Writing"  ]'
+          >
+            <span class="wrap"></span>
+          </span>
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 py-10 h-full overflow-y-scroll md:hide-scrollbar md:overflow-y-hidden"
+        >
+          <!-- img -->
+          <div
+            class="p-5 md:order-2 flex flex-col justify-center items-center md:items-start"
+          >
+            <div class="img-card p-px h-full">
+              <img
+                src="src/imgs/adhamsharkawyhome.jpg"
+                class="home-img select-none"
+                loading="lazy"
+                alt="Adham Sharkawy"
+                title="Adham Sharkawy"
+              />
+            </div>
+          </div>
+
+          <!-- text -->
+          <div
+            class="p-5 flex flex-col space-y-3 h-full sm:text-sm overflow-scroll md:hide-scrollbar md:overflow-y-hidden"
+          >
+            <div
+              class="text-card flex flex-col md:justify-center p-5 space-y-2 h-full z-40"
+            >
+              <div class="flex flex-row gap-2 pb-2">
+                <div class="flex justify-center items-center">
+                  <span
+                    class="bi bi-film text-primary text-lg md:text-2xl"
+                  ></span>
+                </div>
+                <div class="w-full flex justify-start items-center">
+                  <h3 class="text-lg text-primary">
+                    Video Editing & AI Video Creation
+                  </h3>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Advanced video editing skills using CapCut with a
+                    professional level of precision, timing, and creativity
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Skilled in applying Runway Killing and Image FX techniques
+                    to enhance visual quality and realism.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Experienced in generating and editing AI-based videos using
+                    Runway, Flow, and View 3
+                  </p>
+                </div>
+              </div>
+              <!-- ---------------- -------------- -->
+              <div class="flex flex-row gap-2 pb-2 mt-5">
+                <div class="flex justify-center items-center">
+                  <span
+                    class="bi bi-robot text-primary text-lg md:text-2xl"
+                  ></span>
+                </div>
+                <div class="w-full flex justify-start items-center">
+                  <h3 class="text-lg text-primary">AI & Creative Tools</h3>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Proficient in generating creative and realistic images using
+                    Midjourney, Sora, and Gemini.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Strong experience in using Pinterest for concept design,
+                    color palettes, and creative references.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Expert at combining multiple AI tools to produce original,
+                    aesthetic, and high-quality visuals.
+                  </p>
+                </div>
+              </div>
+              <!-- ---------------- -------------- -->
+              <div class="flex flex-row gap-2 pb-2 mt-5">
+                <div class="flex justify-center items-center">
+                  <span
+                    class="bi bi-palette text-primary text-lg md:text-2xl"
+                  ></span>
+                </div>
+                <div class="w-full flex justify-start items-center">
+                  <h3 class="text-lg text-primary">
+                    Design & Content Production
+                  </h3>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Skilled in using Canva to design professional visuals,
+                    social media posts, and promotional materials.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Able to create high-quality image compositions and video
+                    edits directly on Canva with creative precision.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex flex-row gap-3 ps-2">
+                <div class="flex justify-center items-start">
+                  <span
+                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                  ></span>
+                </div>
+                <div
+                  class="w-full text-sm pe-10 flex justify-start items-center"
+                >
+                  <p class="text-primary text-sm">
+                    Strong sense of layout, typography, and branding
+                    consistency.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section id="projects" class="px-5 md:px-20 py-5 md:py-15">
+        <h1
+          class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
+        >
+          Real Projects
+        </h1>
+        <div
+          class="px-5 grid grid-cols-1 md:grid-cols-2 py-10 overflow-y-scroll md:hide-scrollbar md:overflow-y-hidden"
+        >
+          <!-- vidoe -->
+          <div class="vid-card">
+            <!-- TODO:remove muted -->
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              disablePictureInPicture
+              controlslist="nodownload nofullscreen noremoteplayback"
+              class="vid-frame select-none"
+            >
+              <source src="src/imgs/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <!-- social media -->
+          <div class="social-card">
+            <h3
+              class="archivo text-3xl font-bold text-primary mb-8 text-center"
+            >
+              Follow Me On
+            </h3>
+            <div class="gap-5 flex flex-col justify-center items-center w-full">
+              <a
+                href="https://youtube.com/@adhamsharkawy218?si=lgyEXIK_xvhKQac1"
+                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                target="_blank"
+              >
+                <p class="bi bi-youtube me-2 text-xl"></p>
+                <p class="text-2xl font-bold youtube">YouTube</p>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1BNedFkqpV/?mibextid=wwXIfr"
+                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                target="_blank"
+              >
+                <p class="bi bi-facebook me-2 text-xl"></p>
+                <p class="text-2xl font-bold facebook">FaceBook</p>
+              </a>
+              <a
+                href="https://www.tiktok.com/@adhamsharkawy12?_r=1&_t=ZS-9158LwZDEGe"
+                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                target="_blank"
+              >
+                <p class="bi bi-tiktok me-2 text-xl"></p>
+                <p class="text-2xl font-bold tiktok">TikTok</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="overflow-hidden w-full bg-white border-y py-4">
+          <div
+            class="flex gap-8 whitespace-nowrap animate-[scroll_20s_linear_infinite]"
+          >
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 1" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 2" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 3" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 4" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 1" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 2" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 3" />
+            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 4" />
+            <!-- كرر حسب الحاجة -->
+          </div>
+        </div>
+      </section>
+
+      <section id="3" class="">
+        <div class="grid grid-cols-1 md:grid-cols-4 p-10">
+          <div class="flex justify-center items-center">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="title">FLIP CARD</p>
+                  <p>Hover Me</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="title">BACK</p>
+                  <p>Leave Me</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="title">FLIP CARD</p>
+                  <p>Hover Me</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="title">BACK</p>
+                  <p>Leave Me</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <p class="title">FLIP CARD</p>
+                  <p>Hover Me</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="title">BACK</p>
+                  <p>Leave Me</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="4" class=""></section>
+    </main>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
+    <script src="src/js/gsap.js"></script>
+    <script src="src/js/text.js"></script>
+    <!-- TODO: when prod -->
+    <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
+    <script src="node_modules/flyonui/flyonui.js"></script>
+    <script type="module">
+      const { createApp, nextTick } = Vue;
+      const gsap = window.gsap;
+      createApp({
+        data() {
+          return {
+            activeScroll: false,
+          };
+        },
+        methods: {
+          activateFromHash() {
+            const hash = window.location.hash.replace("#", "");
+            console.log(hash);
+            const section = document.getElementById(hash);
+            const navBtn = document.getElementById(hash + "Btn");
+            if (hash) {
+              const navBtns = document.querySelectorAll(".nav-button");
+              navBtns.forEach((btn) => {
+                btn.classList.remove("nav-button-active");
+              });
+              navBtn.classList.add("nav-button-active");
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          },
+          scrollTo(id) {
+            const section = document.getElementById(id);
+            const navBtn = document.getElementById(id + "Btn");
+            if (section) {
+              const navBtns = document.querySelectorAll(".nav-button");
+              navBtns.forEach((btn) => {
+                btn.classList.remove("nav-button-active");
+              });
+              navBtn.classList.add("nav-button-active");
+              section.scrollIntoView({ behavior: "smooth" });
+              window.location.hash = id;
+            }
+          },
+          changeHomeImg() {
+            const imgs = [
+              "src/imgs/adhamsharkawyhome.jpg",
+              "src/imgs/adhamsharkawyhome.jpg",
+              "src/imgs/adhamsharkawyhome.jpg",
+            ];
+            const homeImgElements = document.querySelectorAll(".home-img");
+            let index = 0;
+            setInterval(() => {
+              index = (index + 1) % imgs.length;
+              homeImgElements.forEach((imgEl) => {
+                imgEl.src = imgs[index];
+              });
+            }, 5000);
+          },
+        },
+        mounted() {
+          this.activateFromHash();
+          this.changeHomeImg();
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>

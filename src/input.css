@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import "tailwindcss";
+
+@plugin "flyonui" {
+  themes: vscode --default, vscode --prefersdark, vscode;
+}
+@import "../node_modules/flyonui/variants.css";
+
+@source "../node_modules/flyonui/dist/index.js";
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+}
+/* header */
+.archivo {
+  font-family: "Archivo Black", sans-serif;
+}
+.Libre {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+body {
+  overflow: hidden !important;
+}
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.hero-title {
+  font-family: "Archivo Black", sans-serif;
+  color: #ffffffbd;
+  text-decoration: none;
+  margin-bottom: 0;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.175);
+}
+section {
+  height: 100vh;
+  width: 100vw;
+}
