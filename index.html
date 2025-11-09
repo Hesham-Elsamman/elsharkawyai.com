@@ -3,9 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="src/imgs/logo.png" type="image/x-icon" />
-    <link href="src/output.css" rel="stylesheet" />
-    <link href="src/style.css" rel="stylesheet" />
+    <link
+      rel="shortcut icon"
+      href="src/assets/imgs/logo.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <link href="src/css/output.css" rel="stylesheet" />
+    <link href="src/css/style.css" rel="stylesheet" />
     <title>Sharkawy Ai</title>
   </head>
   <body>
@@ -26,7 +48,7 @@
         rel="noopener"
         href="https://www.youtube.com/channel/UCzcQeU7DxtEyw40LzC0-w6Q "
         target="_blank"
-        class="logo fixed top-10 right-0 me-5 h-20 w-20 floting check"
+        class="logo fixed top-5 right-0 me-5 h-20 w-20 floting check"
       ></a>
 
       <!-- nav -->
@@ -35,22 +57,32 @@
       >
         <a
           class="nav-button nav-button-active me-3 type1"
+          title="Home"
           @click.prevent="scrollTo('home')"
           href="#home"
           id="homeBtn"
-          ><span class="btn-txt text-xs md:text-md">Home</span></a
-        >
+          ><span class="btn-txt text-lg md:text-md fi fi-sr-home"></span
+        ></a>
         <a
           class="nav-button me-3 type1"
-          @click.prevent="scrollTo('projects')"
-          href="#projects"
-          id="projectsBtn"
-          ><span class="btn-txt text-xs md:text-md">projects</span></a
-        >
+          title="Solutions"
+          @click.prevent="scrollTo('solutions')"
+          href="#solutions"
+          id="solutionsBtn"
+          ><span class="btn-txt text-lg md:text-md fi fi-rr-film"></span
+        ></a>
+        <a
+          class="nav-button me-3 type1"
+          title="Skills"
+          @click.prevent="scrollTo('skills')"
+          href="#skills"
+          id="skillsBtn"
+          ><span class="btn-txt text-lg md:text-md fi fi-sc-trophy"></span
+        ></a>
       </div>
 
       <!-- home -->
-      <section id="home" class="px-5 md:px-20 py-5 md:py-15">
+      <section id="home" class="px-5 md:px-20 py-5 md:py-15 overflow-hidden">
         <h1
           class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
         >
@@ -70,34 +102,57 @@
         </p>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-2 py-10 h-full overflow-y-scroll md:hide-scrollbar md:overflow-y-hidden"
+          class="grid grid-cols-1 md:grid-cols-2 pt-10 pb-20 h-full overflow-y-scroll md:hide-scrollbar md:overflow-y-hidden"
         >
-          <!-- img -->
+          <!-- imgs -->
           <div
             class="p-5 md:order-2 flex flex-col justify-center items-center md:items-start"
           >
             <div class="img-card p-px h-full">
-              <img
-                src="src/imgs/adhamsharkawyhome.jpg"
-                class="home-img select-none"
-                loading="lazy"
-                alt="Adham Sharkawy"
-                title="Adham Sharkawy"
-              />
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper select-none">
+                  <div class="swiper-slide">
+                    <img
+                      src="src/assets/imgs/adhamsharkawyhome.jpg"
+                      class="home-img select-none"
+                      loading="lazy"
+                      alt="Adham Sharkawy"
+                      title="Adham Sharkawy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="src/assets/imgs/adhamsharkawyhome2.jpg"
+                      class="home-img select-none"
+                      loading="lazy"
+                      alt="Adham Sharkawy"
+                      title="Adham Sharkawy"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="src/assets/imgs/adhamsharkawyhome3.jpg"
+                      class="home-img select-none"
+                      loading="lazy"
+                      alt="Adham Sharkawy"
+                      title="Adham Sharkawy"
+                    />
+                  </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+              </div>
             </div>
           </div>
 
           <!-- text -->
-          <div
-            class="p-5 flex flex-col space-y-3 h-full sm:text-sm overflow-scroll md:hide-scrollbar md:overflow-y-hidden"
-          >
+          <div class="p-5 flex flex-col md:justify-center space-y-3 h-full">
             <div
-              class="text-card flex flex-col md:justify-center p-5 space-y-2 h-full z-40"
+              class="text-card flex flex-col md:justify-center p-5 space-y-2 z-40"
             >
               <div class="flex flex-row gap-2 pb-2">
                 <div class="flex justify-center items-center">
                   <span
-                    class="bi bi-film text-primary text-lg md:text-2xl"
+                    class="bi bi-film text-primary text-lg md:text-4xl"
                   ></span>
                 </div>
                 <div class="w-full flex justify-start items-center">
@@ -110,7 +165,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -126,7 +181,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -142,7 +197,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -158,7 +213,7 @@
               <div class="flex flex-row gap-2 pb-2 mt-5">
                 <div class="flex justify-center items-center">
                   <span
-                    class="bi bi-robot text-primary text-lg md:text-2xl"
+                    class="bi bi-robot text-primary text-lg md:text-4xl"
                   ></span>
                 </div>
                 <div class="w-full flex justify-start items-center">
@@ -169,7 +224,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -185,7 +240,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -201,7 +256,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -217,7 +272,7 @@
               <div class="flex flex-row gap-2 pb-2 mt-5">
                 <div class="flex justify-center items-center">
                   <span
-                    class="bi bi-palette text-primary text-lg md:text-2xl"
+                    class="bi bi-palette text-primary text-lg md:text-4xl"
                   ></span>
                 </div>
                 <div class="w-full flex justify-start items-center">
@@ -230,7 +285,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -246,7 +301,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -262,7 +317,7 @@
               <div class="flex flex-row gap-3 ps-2">
                 <div class="flex justify-center items-start">
                   <span
-                    class="bi bi-star-fill text-primary text-xs md:text-sm"
+                    class="bi bi-star-fill text-primary text-sm md:text-xl"
                   ></span>
                 </div>
                 <div
@@ -279,18 +334,18 @@
         </div>
       </section>
 
-      <!-- projects -->
-      <section id="projects" class="px-5 md:px-20 py-5 md:py-15">
+      <!-- solutions -->
+      <section id="solutions" class="py-5 md:py-15 overflow-hidden">
         <h1
-          class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
+          class="hero-title ms-5 mb-10! md:ms-20 text-lg md:text-2xl lg:text-4xl capitalize select-none"
         >
-          Real Projects
+          Implemented Solutions
         </h1>
         <div
-          class="px-5 grid grid-cols-1 md:grid-cols-2 py-10 overflow-y-scroll md:hide-scrollbar md:overflow-y-hidden"
+          class="grid grid-cols-1 md:grid-cols-2 gap-5 md:h-1/2 px-10 md:px-15 mb-20 md:10"
         >
           <!-- vidoe -->
-          <div class="vid-card">
+          <div class="vid-card h-auto">
             <!-- TODO:remove muted -->
             <video
               autoplay
@@ -301,22 +356,24 @@
               controlslist="nodownload nofullscreen noremoteplayback"
               class="vid-frame select-none"
             >
-              <source src="src/imgs/video.mp4" type="video/mp4" />
+              <source src="src/assets/vids/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
 
           <!-- social media -->
-          <div class="social-card">
-            <h3
-              class="archivo text-3xl font-bold text-primary mb-8 text-center"
-            >
+          <div
+            class="social-card h-auto flex flex-col justify-center items-center"
+          >
+            <h3 class="hidden md:block text-3xl font-bold text-primary mb-8">
               Follow Me On
             </h3>
-            <div class="gap-5 flex flex-col justify-center items-center w-full">
+            <div
+              class="gap-5 grid grid-cols-2 md:flex md:flex-col md:justify-center md:items-center w-full"
+            >
               <a
                 href="https://youtube.com/@adhamsharkawy218?si=lgyEXIK_xvhKQac1"
-                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                class="media-card py-3 flex justify-center w-full md:w-8/12 select-none tube"
                 target="_blank"
               >
                 <p class="bi bi-youtube me-2 text-xl"></p>
@@ -324,15 +381,23 @@
               </a>
               <a
                 href="https://www.facebook.com/share/1BNedFkqpV/?mibextid=wwXIfr"
-                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                class="media-card py-3 flex justify-center w-full md:w-8/12 select-none face"
                 target="_blank"
               >
                 <p class="bi bi-facebook me-2 text-xl"></p>
                 <p class="text-2xl font-bold facebook">FaceBook</p>
               </a>
               <a
+                href="https://whatsapp.com/channel/0029VbB2kar3bbV8wzASgC3z"
+                class="media-card py-3 flex justify-center w-full md:w-8/12 select-none whats"
+                target="_blank"
+              >
+                <p class="bi bi-whatsapp me-2 text-xl"></p>
+                <p class="text-2xl font-bold whatsapp">WhatsApp</p>
+              </a>
+              <a
                 href="https://www.tiktok.com/@adhamsharkawy12?_r=1&_t=ZS-9158LwZDEGe"
-                class="media-card py-5 flex justify-center items-start w-10/12 select-none"
+                class="media-card py-3 flex justify-center w-full md:w-8/12 select-none tik"
                 target="_blank"
               >
                 <p class="bi bi-tiktok me-2 text-xl"></p>
@@ -341,24 +406,126 @@
             </div>
           </div>
         </div>
-        <div class="overflow-hidden w-full bg-white border-y py-4">
-          <div
-            class="flex gap-8 whitespace-nowrap animate-[scroll_20s_linear_infinite]"
-          >
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 1" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 2" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 3" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 4" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 1" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 2" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 3" />
-            <img src="src/imgs/logo.png" class="h-12 size-12" alt="Logo 4" />
-            <!-- كرر حسب الحاجة -->
+        <div class="ticker-container">
+          <div id="tickerTrack" class="ticker-track flex gap-8">
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/1.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/2.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/3.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/4.png"
+            /></a>
+            <a
+              href="https://youtu.be/BWygxBGZJ9g?si=k5yD9_br5R0-VbUu"
+              role="banner"
+              target="_blank"
+              class="aimg"
+              ><img src="src/assets/imgs/logos/5.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/6.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/7.png"
+            /></a>
+            <!-- ------ -->
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/1.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/2.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/3.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/4.png"
+            /></a>
+            <a
+              href="https://youtu.be/BWygxBGZJ9g?si=k5yD9_br5R0-VbUu"
+              role="banner"
+              target="_blank"
+              class="aimg"
+              ><img src="src/assets/imgs/logos/5.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/6.png"
+            /></a>
+            <a href="#" role="banner" target="_blank" class="aimg"
+              ><img src="src/assets/imgs/logos/7.png"
+            /></a>
           </div>
         </div>
       </section>
 
-      <section id="3" class="">
+      <!-- skills -->
+      <section id="skills" class="overflow-hidden">
+        <!-- hero -->
+        <div
+          id="heroSection"
+          class="hero h-screen w-full flex justify-center items-center bg-base-100 overflow-hidden relative"
+        >
+          <div class="shooting-star"></div>
+          <div class="shooting-star2"></div>
+          <div
+            class="main__action absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          >
+            <button
+              id="scrollBtn"
+              class="main__scroll"
+              @click="gsapScrollTo('innerSection')"
+            >
+              <div class="main__scroll-box">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0h24v24H0z" fill="none"></path>
+                  <path
+                    d="M11.9997 13.1716L7.04996     8.22186L5.63574 9.63607L11.9997 16L18.3637 9.63607L16.9495 8.22186L11.9997 13.1716Z"
+                    fill="rgb(39, 172, 244)"
+                  ></path>
+                </svg>
+              </div>
+
+              <span class="text-primary text-lg">Scroll</span>
+            </button>
+          </div>
+
+          <h1
+            class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
+          >
+            <span id="heroTitle"></span
+            ><span id="cursor" class="cursor">|</span>
+          </h1>
+
+          <div class="flot-card flot-1" title="Canva">
+            <div class="floating-logo logo-1"></div>
+          </div>
+          <div class="flot-card flot-2" title="Gemini">
+            <div class="floating-logo logo-2"></div>
+          </div>
+          <div class="flot-card flot-3 z-50" title="Runway">
+            <div class="floating-logo logo-3"></div>
+          </div>
+          <div class="flot-card flot-4" title="Davinci Resolve">
+            <div class="floating-logo logo-4"></div>
+          </div>
+          <div class="flot-card flot-5" title="Free Pik">
+            <div class="floating-logo logo-5"></div>
+          </div>
+          <div class="flot-card flot-6" title="Higgs Field">
+            <div class="floating-logo logo-6"></div>
+          </div>
+          <div class="flot-card flot-7" title="Sora">
+            <div class="floating-logo logo-7"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="overflow-hidden">
         <div class="grid grid-cols-1 md:grid-cols-4 p-10">
           <div class="flex justify-center items-center">
             <div class="flip-card">
@@ -404,22 +571,26 @@
           </div>
         </div>
       </section>
-      <section id="4" class=""></section>
     </main>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
-    <script src="src/js/gsap.js"></script>
     <script src="src/js/text.js"></script>
+    <script src="src/js/ticker.js"></script>
     <!-- TODO: when prod -->
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script> -->
     <script src="node_modules/flyonui/flyonui.js"></script>
     <script type="module">
       const { createApp, nextTick } = Vue;
       const gsap = window.gsap;
+      const ScrollTrigger = window.ScrollTrigger;
+      const ScrambleTextPlugin = window.ScrambleTextPlugin;
+
+      gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+
       createApp({
         data() {
           return {
@@ -441,6 +612,28 @@
               section.scrollIntoView({ behavior: "smooth" });
             }
           },
+          swper() {
+            var swiper = new Swiper(".mySwiper", {
+              loop: true,
+              effect: "fade",
+              centeredSlides: true,
+              autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+              },
+              allowTouchMove: false,
+              scrollbar: {
+                el: ".swiper-scrollbar",
+                hide: true,
+              },
+            });
+          },
+          gsapScrollTo(id) {
+            gsap.to(window, {
+              scrollTo: { y: "#" + id },
+              ease: "power2.inOut",
+            });
+          },
           scrollTo(id) {
             const section = document.getElementById(id);
             const navBtn = document.getElementById(id + "Btn");
@@ -454,25 +647,32 @@
               window.location.hash = id;
             }
           },
-          changeHomeImg() {
-            const imgs = [
-              "src/imgs/adhamsharkawyhome.jpg",
-              "src/imgs/adhamsharkawyhome.jpg",
-              "src/imgs/adhamsharkawyhome.jpg",
-            ];
-            const homeImgElements = document.querySelectorAll(".home-img");
-            let index = 0;
-            setInterval(() => {
-              index = (index + 1) % imgs.length;
-              homeImgElements.forEach((imgEl) => {
-                imgEl.src = imgs[index];
-              });
-            }, 5000);
-          },
         },
         mounted() {
           this.activateFromHash();
-          this.changeHomeImg();
+          this.swper();
+
+          ScrollTrigger.create({
+            trigger: "#heroSection",
+            start: "top center",
+            onEnter: () => {
+              gsap.to("#heroTitle", {
+                duration: 3,
+                scrambleText: {
+                  text: "Expert in modern design and AI workflows",
+                  chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
+                  revealDelay: 0.5,
+                  speed: 0.1,
+                },
+                ease: "none",
+              });
+            },
+            onLeaveBack: () => {
+              document.getElementById("heroTitle").innerHTML = `
+  <span id="heroText"></span><span id="cursor" class="cursor">|</span>
+`;
+            },
+          });
         },
       }).mount("#app");
     </script>

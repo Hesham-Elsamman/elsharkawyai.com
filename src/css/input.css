@@ -5,9 +5,9 @@
 @plugin "flyonui" {
   themes: vscode --default, vscode --prefersdark, vscode;
 }
-@import "../node_modules/flyonui/variants.css";
+@import "../../node_modules/flyonui/variants.css";
 
-@source "../node_modules/flyonui/dist/index.js";
+@source "../../node_modules/flyonui/dist/index.js";
 
 html {
   scroll-behavior: smooth;
