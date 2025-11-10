@@ -53,10 +53,11 @@
 
       <!-- nav -->
       <div
-        class="z-50 fixed top-1/2 right-0 transform -translate-y-1/2 flex flex-col items-end space-y-2"
+        class="z-40 fixed top-1/2 right-0 transform -translate-y-1/2 flex flex-col items-end space-y-2"
       >
         <a
-          class="nav-button nav-button-active me-3 type1"
+          class="nav-button me-3 type1"
+          :class="{ 'nav-button-active': activeSection === 'home' }"
           title="Home"
           @click.prevent="scrollTo('home')"
           href="#home"
@@ -65,6 +66,7 @@
         ></a>
         <a
           class="nav-button me-3 type1"
+          :class="{ 'nav-button-active': activeSection === 'solutions' }"
           title="Solutions"
           @click.prevent="scrollTo('solutions')"
           href="#solutions"
@@ -73,6 +75,7 @@
         ></a>
         <a
           class="nav-button me-3 type1"
+          :class="{ 'nav-button-active': activeSection === 'skills' }"
           title="Skills"
           @click.prevent="scrollTo('skills')"
           href="#skills"
@@ -82,7 +85,11 @@
       </div>
 
       <!-- home -->
-      <section id="home" class="px-5 md:px-20 py-5 md:py-15 overflow-hidden">
+      <section
+        v-show="activeSection == 'home'"
+        id="home"
+        class="px-5 md:px-20 py-5 md:py-15 overflow-hidden"
+      >
         <h1
           class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
         >
@@ -97,8 +104,10 @@
             data-period="2000"
             data-type='[ "Video Editing", "AI Video Creation", "Love Design", "Creative Writing"  ]'
           >
-            <span class="wrap"></span>
-          </span>
+          </span
+          ><span id="cursor" class="cursor text-xs! md:text-md! lg:text-xl!"
+            >|</span
+          >
         </p>
 
         <div
@@ -147,7 +156,7 @@
           <!-- text -->
           <div class="p-5 flex flex-col md:justify-center space-y-3 h-full">
             <div
-              class="text-card flex flex-col md:justify-center p-5 space-y-2 z-40"
+              class="text-card flex flex-col md:justify-center p-5 space-y-2 z-30"
             >
               <div class="flex flex-row gap-2 pb-2">
                 <div class="flex justify-center items-center">
@@ -335,7 +344,11 @@
       </section>
 
       <!-- solutions -->
-      <section id="solutions" class="py-5 md:py-15 overflow-hidden">
+      <section
+        v-show="activeSection == 'solutions'"
+        id="solutions"
+        class="py-5 md:py-15 overflow-hidden"
+      >
         <h1
           class="hero-title ms-5 mb-10! md:ms-20 text-lg md:text-2xl lg:text-4xl capitalize select-none"
         >
@@ -377,7 +390,7 @@
                 target="_blank"
               >
                 <p class="bi bi-youtube me-2 text-xl"></p>
-                <p class="text-2xl font-bold youtube">YouTube</p>
+                <p class="text-lg md:text-2xl font-bold youtube">YouTube</p>
               </a>
               <a
                 href="https://www.facebook.com/share/1BNedFkqpV/?mibextid=wwXIfr"
@@ -385,7 +398,7 @@
                 target="_blank"
               >
                 <p class="bi bi-facebook me-2 text-xl"></p>
-                <p class="text-2xl font-bold facebook">FaceBook</p>
+                <p class="text-lg md:text-2xl font-bold facebook">FaceBook</p>
               </a>
               <a
                 href="https://whatsapp.com/channel/0029VbB2kar3bbV8wzASgC3z"
@@ -393,7 +406,7 @@
                 target="_blank"
               >
                 <p class="bi bi-whatsapp me-2 text-xl"></p>
-                <p class="text-2xl font-bold whatsapp">WhatsApp</p>
+                <p class="text-lg md:text-2xl font-bold whatsapp">WhatsApp</p>
               </a>
               <a
                 href="https://www.tiktok.com/@adhamsharkawy12?_r=1&_t=ZS-9158LwZDEGe"
@@ -401,7 +414,7 @@
                 target="_blank"
               >
                 <p class="bi bi-tiktok me-2 text-xl"></p>
-                <p class="text-2xl font-bold tiktok">TikTok</p>
+                <p class="text-lg md:text-2xl font-bold tiktok">TikTok</p>
               </a>
             </div>
           </div>
@@ -464,21 +477,25 @@
       </section>
 
       <!-- skills -->
-      <section id="skills" class="overflow-hidden">
+      <section
+        v-show="activeSection == 'skills'"
+        id="skills"
+        class="overflow-hidden"
+      >
         <!-- hero -->
         <div
           id="heroSection"
-          class="hero h-screen w-full flex justify-center items-center bg-base-100 overflow-hidden relative"
+          class="hero h-screen w-full py-5 flex justify-center items-center bg-base-100 overflow-hidden relative z-50"
         >
           <div class="shooting-star"></div>
           <div class="shooting-star2"></div>
           <div
             class="main__action absolute bottom-10 left-1/2 transform -translate-x-1/2"
           >
-            <button
-              id="scrollBtn"
+            <a
+              href="#innerSection"
+              @click.prevent="ScrollToInner('innerSection')"
               class="main__scroll"
-              @click="gsapScrollTo('innerSection')"
             >
               <div class="main__scroll-box">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -490,14 +507,19 @@
                 </svg>
               </div>
 
-              <span class="text-primary text-lg">Scroll</span>
-            </button>
+              <span class="text-primary text-sm">Tap To Scroll</span>
+            </a>
           </div>
 
           <h1
-            class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
+            class="hero-title text-sm! md:text-xl! lg:text-2xl! capitalize select-none"
           >
-            <span id="heroTitle"></span
+            <span
+              class="typewrite"
+              data-period="2000"
+              data-type='[ "Expert in modern design and AI workflows", "Strong sense of layout, branding & typography", "Advanced editing with timing and visual precision", "Combining AI tools for high-quality content"  ]'
+            >
+            </span
             ><span id="cursor" class="cursor">|</span>
           </h1>
 
@@ -523,50 +545,241 @@
             <div class="floating-logo logo-7"></div>
           </div>
         </div>
-      </section>
 
-      <section class="overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-4 p-10">
-          <div class="flex justify-center items-center">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <p class="title">FLIP CARD</p>
-                  <p>Hover Me</p>
+        <!-- inner section -->
+        <div
+          id="innerSection"
+          class="px-5 h-screen md:px-20 py-10 md:py-15 overflow-y-scroll bg-base-200"
+        >
+          <h1
+            class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none mb-10"
+          >
+            Client Feedback
+          </h1>
+          <div class="grid grid-cols-1 md:grid-cols-3 p-10 gap-6">
+            <!-- -------------------------------------------------------------------------------------- -->
+            <div class="flex justify-center items-center">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <p class="title">Customer satisfaction</p>
+                  </div>
+
+                  <div
+                    class="flip-card-back flex flex-col justify-center items-center gap-3"
+                  >
+                    <div
+                      class="radial-progress text-primary animate-bounce!"
+                      style="--value: 85"
+                      role="progressbar"
+                      aria-label="Primary Radial Progressbar"
+                    >
+                      ⭐5+
+                    </div>
+                    <div class="space-y-1 text-start!">
+                      <p class="text-sm">⭐Projects delivered: 300+</p>
+                      <p class="text-sm">⭐Completed videos: 800+</p>
+                      <p class="text-sm">⭐Clients served: 99+</p>
+                      <p class="text-xm text-center text-primary mt-3">
+                        I Got More Stars
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class="flip-card-back">
-                  <p class="title">BACK</p>
-                  <p>Leave Me</p>
+              </div>
+            </div>
+            <!-- -------------------------------------------------------------------------------------- -->
+            <div class="flex justify-center items-center">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <p class="title">Timely</p>
+                    <p class="title">Delivery</p>
+                  </div>
+
+                  <div
+                    class="flip-card-back flex flex-col justify-center items-center gap-3"
+                  >
+                    <div
+                      class="radial-progress text-primary animate-bounce!"
+                      style="--value: 100"
+                      role="progressbar"
+                      aria-label="Primary Radial Progressbar"
+                    >
+                      100%
+                    </div>
+                    <div class="space-y-1 text-start!">
+                      <p class="text-sm">💯On-time delivery: 95%</p>
+                      <p class="text-sm">💯Happy clients: 99+</p>
+                      <p class="text-sm">💯Design assets: 500+</p>
+                      <p class="text-xm text-center text-primary mt-3">
+                        Consistent client trust
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- -------------------------------------------------------------------------------------- -->
+            <div class="flex justify-center items-center">
+              <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <p class="title">Returning</p>
+                    <p class="title">clients</p>
+                  </div>
+
+                  <div
+                    class="flip-card-back flex flex-col justify-center items-center gap-3"
+                  >
+                    <div
+                      class="radial-progress text-primary animate-bounce!"
+                      style="--value: 70"
+                      role="progressbar"
+                      aria-label="Primary Radial Progressbar"
+                    >
+                      70+
+                    </div>
+                    <div class="space-y-1 text-start!">
+                      <p class="text-sm">🫱🏻‍🫲🏻Repeat clients: 70%</p>
+                      <p class="text-sm">🫱🏻‍🫲🏻Returning clients: 90+</p>
+                      <p class="text-sm">🫱🏻‍🫲🏻Loyal client base: 85%</p>
+                      <p class="text-xm text-center text-primary mt-3">
+                        Built on client confidence
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="flex justify-center items-center">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <p class="title">FLIP CARD</p>
-                  <p>Hover Me</p>
+          <div class="clients-comments mt-20 px-5 md:px-0">
+            <div class="swiper mySwiper2">
+              <div class="swiper-wrapper">
+                <div
+                  class="swiper-slide hover:bg-primary! hover:shadow-primary shadow-md p-4"
+                >
+                  <div class="card p-5 bg-base-100 shadow-md h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="avatar avatar-placeholder">
+                        <div
+                          class="bg-primary text-primary-content w-10 rounded-full"
+                        >
+                          <span class="text-md uppercase text-base-100!"
+                            >SA</span
+                          >
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="text-primary font-bold">Sara Ahmed</p>
+                        <p class="text-sm text-primary text-muted">
+                          Marketing Manager
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-3">
+                      "Outstanding work — videos were delivered on time and the
+                      creative direction exceeded expectations. Highly recommend
+                      for AI-enhanced edits."
+                    </p>
+                    <div class="text-primary">⭐⭐⭐⭐⭐</div>
+                  </div>
                 </div>
-                <div class="flip-card-back">
-                  <p class="title">BACK</p>
-                  <p>Leave Me</p>
+
+                <div
+                  class="swiper-slide hover:bg-primary! hover:shadow-primary shadow-md p-4"
+                >
+                  <div class="card p-5 bg-base-100 shadow-md h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="avatar avatar-placeholder">
+                        <div
+                          class="bg-primary text-primary-content w-10 rounded-full"
+                        >
+                          <span class="text-md uppercase text-base-100!"
+                            >OE</span
+                          >
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="text-primary font-bold">Omar El-Sayed</p>
+                        <p class="text-sm text-primary text-muted">
+                          Content Creator
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-3">
+                      "Great collaboration and superb design sense. The AI
+                      imagery and final edits looked natural and professional."
+                    </p>
+                    <div class="text-primary">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper-slide hover:bg-primary! hover:shadow-primary shadow-md p-4"
+                >
+                  <div class="card p-5 bg-base-100 shadow-md h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="avatar avatar-placeholder">
+                        <div
+                          class="bg-primary text-primary-content w-10 rounded-full"
+                        >
+                          <span class="text-md uppercase text-base-100!"
+                            >LH</span
+                          >
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="text-primary font-bold">Lina Hassan</p>
+                        <p class="text-sm text-primary text-muted">
+                          Brand Designer
+                        </p>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-3">
+                      "Creative, fast, and communicative. The visuals improved
+                      our campaign CTR significantly — a pleasure to work with."
+                    </p>
+                    <div class="text-primary">⭐⭐⭐⭐⭐</div>
+                  </div>
+                </div>
+
+                <div
+                  class="swiper-slide hover:bg-primary! hover:shadow-primary shadow-md p-4"
+                >
+                  <div class="card p-5 bg-base-100 shadow-md h-full">
+                    <div class="flex items-center gap-4 mb-4">
+                      <div class="avatar avatar-placeholder">
+                        <div
+                          class="bg-primary text-primary-content w-10 rounded-full"
+                        >
+                          <span class="text-md uppercase text-base-100!"
+                            >MF</span
+                          >
+                        </div>
+                      </div>
+
+                      <div>
+                        <p class="text-primary font-bold">Maged Farouk</p>
+                        <p class="text-sm text-primary text-muted">CEO</p>
+                      </div>
+                    </div>
+                    <p class="text-sm leading-relaxed mb-3">
+                      "Professional delivery and exceptional attention to
+                      detail. AI workflows produced impressive, realistic
+                      results."
+                    </p>
+                    <div class="text-primary">⭐⭐⭐⭐⭐</div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="flex justify-center items-center">
-            <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <p class="title">FLIP CARD</p>
-                  <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                  <p class="title">BACK</p>
-                  <p>Leave Me</p>
-                </div>
-              </div>
+
+              <div class="swiper-pagination mt-4"></div>
+              <!-- <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div> -->
             </div>
           </div>
         </div>
@@ -595,24 +808,28 @@
         data() {
           return {
             activeScroll: false,
+            activeSection: "home",
           };
         },
         methods: {
           activateFromHash() {
             const hash = window.location.hash.replace("#", "");
-            console.log(hash);
-            const section = document.getElementById(hash);
-            const navBtn = document.getElementById(hash + "Btn");
             if (hash) {
-              const navBtns = document.querySelectorAll(".nav-button");
-              navBtns.forEach((btn) => {
-                btn.classList.remove("nav-button-active");
-              });
-              navBtn.classList.add("nav-button-active");
-              section.scrollIntoView({ behavior: "smooth" });
+              this.activeSection = hash;
             }
+            // const hash = window.location.hash.replace("#", "");
+            // const section = document.getElementById(hash);
+            // const navBtn = document.getElementById(hash + "Btn");
+            // if (hash) {
+            //   const navBtns = document.querySelectorAll(".nav-button");
+            //   navBtns.forEach((btn) => {
+            //     btn.classList.remove("nav-button-active");
+            //   });
+            //   navBtn.classList.add("nav-button-active");
+            //   section.scrollIntoView({ behavior: "smooth" });
+            // }
           },
-          swper() {
+          swperHome() {
             var swiper = new Swiper(".mySwiper", {
               loop: true,
               effect: "fade",
@@ -628,51 +845,51 @@
               },
             });
           },
-          gsapScrollTo(id) {
-            gsap.to(window, {
-              scrollTo: { y: "#" + id },
-              ease: "power2.inOut",
+          swperClients() {
+            var swiper = new Swiper(".mySwiper2", {
+              loop: true,
+              autoplay: { delay: 4500, disableOnInteraction: false },
+              slidesPerView: 1,
+              spaceBetween: 20,
+              pagination: {
+                el: ".mySwiper2 .swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".mySwiper2 .swiper-button-next",
+                prevEl: ".mySwiper2 .swiper-button-prev",
+              },
+              breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+              },
             });
           },
           scrollTo(id) {
+            this.activeSection = id;
+            window.location.hash = id;
+            // const section = document.getElementById(id);
+            // const navBtn = document.getElementById(id + "Btn");
+            // if (section) {
+            //   const navBtns = document.querySelectorAll(".nav-button");
+            //   navBtns.forEach((btn) => {
+            //     btn.classList.remove("nav-button-active");
+            //   });
+            //   navBtn.classList.add("nav-button-active");
+            //   section.scrollIntoView({ behavior: "smooth" });
+            // }
+          },
+          ScrollToInner(id) {
             const section = document.getElementById(id);
-            const navBtn = document.getElementById(id + "Btn");
             if (section) {
-              const navBtns = document.querySelectorAll(".nav-button");
-              navBtns.forEach((btn) => {
-                btn.classList.remove("nav-button-active");
-              });
-              navBtn.classList.add("nav-button-active");
-              section.scrollIntoView({ behavior: "smooth" });
-              window.location.hash = id;
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
             }
           },
         },
         mounted() {
           this.activateFromHash();
-          this.swper();
-
-          ScrollTrigger.create({
-            trigger: "#heroSection",
-            start: "top center",
-            onEnter: () => {
-              gsap.to("#heroTitle", {
-                duration: 3,
-                scrambleText: {
-                  text: "Expert in modern design and AI workflows",
-                  chars: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",
-                  revealDelay: 0.5,
-                  speed: 0.1,
-                },
-                ease: "none",
-              });
-            },
-            onLeaveBack: () => {
-              document.getElementById("heroTitle").innerHTML = `
-  <span id="heroText"></span><span id="cursor" class="cursor">|</span>
-`;
-            },
-          });
+          this.swperHome();
+          this.swperClients();
         },
       }).mount("#app");
     </script>
