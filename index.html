@@ -398,12 +398,11 @@
           <div class="vid-card h-auto">
             <!-- TODO:remove muted -->
             <video
+              controls
               autoplay
               loop
-              muted
               playsinline
-              disablePictureInPicture
-              controlslist="nodownload nofullscreen noremoteplayback"
+              controls
               class="vid-frame select-none"
             >
               <source src="src/assets/vids/video.mp4" type="video/mp4" />
@@ -915,6 +914,10 @@
           },
         },
         mounted() {
+          const video = document.querySelector("video");
+          video.muted = false;
+          video.volume = 1.0;
+
           this.activateFromHash();
           this.swperHome();
           this.swperClients();
