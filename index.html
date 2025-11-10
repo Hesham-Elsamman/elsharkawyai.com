@@ -787,10 +787,6 @@
     </main>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrambleTextPlugin3.min.js"></script>
     <script src="src/js/text.js"></script>
     <script src="src/js/ticker.js"></script>
     <!-- TODO: when prod -->
@@ -798,11 +794,6 @@
     <script src="node_modules/flyonui/flyonui.js"></script>
     <script type="module">
       const { createApp, nextTick } = Vue;
-      const gsap = window.gsap;
-      const ScrollTrigger = window.ScrollTrigger;
-      const ScrambleTextPlugin = window.ScrambleTextPlugin;
-
-      gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
 
       createApp({
         data() {
