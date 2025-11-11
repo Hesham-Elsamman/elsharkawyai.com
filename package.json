@@ -5,8 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
-    "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css",
-    "start": "npm run dev"
+    "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css"
   },
   "keywords": [],
   "author": "heshamElsamman",

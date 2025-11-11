@@ -2128,11 +2128,11 @@
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
-  }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
   }
   .space-y-1 {
     :where(& > :not(:last-child)) {
@@ -2998,6 +2998,11 @@
       order: 2;
     }
   }
+  .md\:ms-5 {
+    @media (width >= 48rem) {
+      margin-inline-start: calc(var(--spacing) * 5);
+    }
+  }
   .md\:ms-20 {
     @media (width >= 48rem) {
       margin-inline-start: calc(var(--spacing) * 20);
@@ -3066,6 +3071,11 @@
   .md\:justify-center {
     @media (width >= 48rem) {
       justify-content: center;
+    }
+  }
+  .md\:gap-6 {
+    @media (width >= 48rem) {
+      gap: calc(var(--spacing) * 6);
     }
   }
   .md\:overflow-hidden {
