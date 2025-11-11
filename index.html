@@ -65,6 +65,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <link href="src/css/output.css" rel="stylesheet" />
@@ -85,6 +86,7 @@
     <main id="app">
       <!-- logo -->
       <a
+        data-aos="flip-right"
         role="banner"
         rel="noopener"
         href="https://www.youtube.com/channel/UCzcQeU7DxtEyw40LzC0-w6Q "
@@ -94,6 +96,7 @@
 
       <!-- nav -->
       <div
+        data-aos="fade-left"
         class="z-40 fixed top-1/2 right-0 transform -translate-y-1/2 flex flex-col items-end space-y-2"
       >
         <a
@@ -123,6 +126,15 @@
           id="skillsBtn"
           ><span class="btn-txt text-lg md:text-md fi fi-sc-trophy"></span
         ></a>
+        <a
+          class="nav-button me-3 type1"
+          :class="{ 'nav-button-active': activeSection === 'contact_me' }"
+          title="contact_me"
+          @click.prevent="scrollTo('contact_me')"
+          href="#contact_me"
+          id="contact_meBtn"
+          ><span class="btn-txt text-lg md:text-md bi bi-telephone-fill"></span
+        ></a>
       </div>
 
       <!-- home -->
@@ -132,11 +144,14 @@
         class="px-5 md:px-20 py-5 md:py-15 overflow-hidden"
       >
         <h1
+          data-aos="fade-down-right"
           class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
         >
           ADHAM SHARKAWY AI
         </h1>
         <p
+          data-aos="zoom-in"
+          data-aos-duration="1500"
           class="hero-title text-sm! md:text-lg lg:text-xl capitalize select-none"
         >
           I'm
@@ -158,7 +173,11 @@
           <div
             class="p-5 md:order-2 flex flex-col justify-center items-center md:items-start"
           >
-            <div class="img-card p-px h-full">
+            <div
+              class="img-card p-px h-full"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+            >
               <div class="swiper mySwiper">
                 <div class="swiper-wrapper select-none">
                   <div class="swiper-slide">
@@ -198,6 +217,8 @@
           <div class="p-5 flex flex-col md:justify-center space-y-3 h-full">
             <div
               class="text-card flex flex-col md:justify-center p-5 space-y-2 z-30"
+              data-aos="fade-right"
+              data-aos-duration="1000"
             >
               <div class="flex flex-row gap-2 pb-2">
                 <div class="flex justify-center items-center">
@@ -395,7 +416,12 @@
           class="grid grid-cols-1 md:grid-cols-2 gap-5 md:h-1/2 px-10 md:px-15 mb-20 md:10"
         >
           <!-- vidoe -->
-          <div class="vid-card h-auto">
+          <div
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine"
+            class="vid-card h-auto"
+          >
             <!-- TODO:remove muted -->
             <video
               controls
@@ -405,7 +431,7 @@
               controls
               class="vid-frame select-none"
             >
-              <source src="src/assets/vids/video.mp4" type="video/mp4" />
+              <source src="src/assets/vids/videomain.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -421,6 +447,8 @@
               class="gap-5 grid grid-cols-2 md:flex md:flex-col md:justify-center md:items-center w-full"
             >
               <a
+                data-aos="fade-down"
+                data-aos-easing="linear"
                 href="https://youtube.com/@adhamsharkawy218?si=lgyEXIK_xvhKQac1"
                 class="media-card py-3 flex justify-center w-full md:w-8/12 select-none tube"
                 target="_blank"
@@ -429,6 +457,8 @@
                 <p class="text-lg md:text-2xl font-bold youtube">YouTube</p>
               </a>
               <a
+                data-aos="fade-down"
+                data-aos-easing="linear"
                 href="https://www.facebook.com/share/1BNedFkqpV/?mibextid=wwXIfr"
                 class="media-card py-3 flex justify-center w-full md:w-8/12 select-none face"
                 target="_blank"
@@ -437,6 +467,8 @@
                 <p class="text-lg md:text-2xl font-bold facebook">FaceBook</p>
               </a>
               <a
+                data-aos="fade-down"
+                data-aos-easing="linear"
                 href="https://whatsapp.com/channel/0029VbB2kar3bbV8wzASgC3z"
                 class="media-card py-3 flex justify-center w-full md:w-8/12 select-none whats"
                 target="_blank"
@@ -445,6 +477,8 @@
                 <p class="text-lg md:text-2xl font-bold whatsapp">WhatsApp</p>
               </a>
               <a
+                data-aos="fade-down"
+                data-aos-easing="linear"
                 href="https://www.tiktok.com/@adhamsharkawy12?_r=1&_t=ZS-9158LwZDEGe"
                 class="media-card py-3 flex justify-center w-full md:w-8/12 select-none tik"
                 target="_blank"
@@ -455,7 +489,7 @@
             </div>
           </div>
         </div>
-        <div class="ticker-container">
+        <div data-aos="fade-up" class="ticker-container">
           <div id="tickerTrack" class="ticker-track flex gap-8">
             <a href="#" role="banner" target="_blank" class="aimg"
               ><img src="src/assets/imgs/logos/1.png"
@@ -530,7 +564,7 @@
           >
             <a
               href="#innerSection"
-              @click.prevent="ScrollToInner('innerSection')"
+              @click.prevent="scrollToInner('innerSection')"
               class="main__scroll"
             >
               <div class="main__scroll-box">
@@ -559,25 +593,67 @@
             ><span id="cursor" class="cursor">|</span>
           </h1>
 
-          <div class="flot-card flot-1" title="Canva">
+          <div
+            data-aos="zoom-out-right"
+            dara-aos-duration="3500"
+            data-aos-easing="linear"
+            class="flot-card flot-1"
+            title="Canva"
+          >
             <div class="floating-logo logo-1"></div>
           </div>
-          <div class="flot-card flot-2" title="Gemini">
+          <div
+            data-aos="zoom-out-down"
+            dara-aos-duration="1500"
+            data-aos-easing="linear"
+            class="flot-card flot-2"
+            title="Gemini"
+          >
             <div class="floating-logo logo-2"></div>
           </div>
-          <div class="flot-card flot-3 z-50" title="Runway">
+          <div
+            data-aos="zoom-out-left"
+            dara-aos-duration="1500"
+            data-aos-easing="linear"
+            class="flot-card flot-3 z-50"
+            title="Runway"
+          >
             <div class="floating-logo logo-3"></div>
           </div>
-          <div class="flot-card flot-4" title="Davinci Resolve">
+          <div
+            data-aos="zoom-out-left"
+            dara-aos-duration="1500"
+            data-aos-easing="linear"
+            class="flot-card flot-4"
+            title="Davinci Resolve"
+          >
             <div class="floating-logo logo-4"></div>
           </div>
-          <div class="flot-card flot-5" title="Free Pik">
+          <div
+            data-aos="zoom-out-up"
+            dara-aos-duratio3="1500"
+            data-aos-easing="linear"
+            class="flot-card flot-5"
+            title="Free Pik"
+          >
             <div class="floating-logo logo-5"></div>
           </div>
-          <div class="flot-card flot-6" title="Higgs Field">
+          <div
+            data-aos="zoom-out-right"
+            dara-aos-duration="3500"
+            data-aos-easing="linear"
+            class="flot-card flot-6"
+            title="Higgs Field"
+          >
             <div class="floating-logo logo-6"></div>
           </div>
-          <div class="flot-card flot-7" title="Sora">
+          <div
+            data-aos="zoom-out-right"
+            dara-aos-duration="3500"
+            data-aos-easing="linear"
+            class="flot-card flot-7"
+            title="Sora"
+          >
             <div class="floating-logo logo-7"></div>
           </div>
         </div>
@@ -585,16 +661,23 @@
         <!-- inner section -->
         <div
           id="innerSection"
-          class="px-5 h-screen md:px-20 py-10 md:py-15 overflow-y-scroll bg-base-200"
+          class="px-5 h-screen md:px-20 py-10 md:py-15 overflow-y-scroll bg-base-100"
         >
           <h1
+            data-aos="fade-down"
             class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none mb-10"
           >
             Client Feedback
           </h1>
+
+          <!-- cards stats -->
           <div class="grid grid-cols-1 md:grid-cols-3 p-10 gap-6">
             <!-- -------------------------------------------------------------------------------------- -->
-            <div class="flex justify-center items-center">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1500"
+              class="flex justify-center items-center"
+            >
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -625,7 +708,11 @@
               </div>
             </div>
             <!-- -------------------------------------------------------------------------------------- -->
-            <div class="flex justify-center items-center">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1800"
+              class="flex justify-center items-center"
+            >
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -657,7 +744,11 @@
               </div>
             </div>
             <!-- -------------------------------------------------------------------------------------- -->
-            <div class="flex justify-center items-center">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="2100"
+              class="flex justify-center items-center"
+            >
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -689,7 +780,13 @@
               </div>
             </div>
           </div>
-          <div class="clients-comments mt-20 px-5 md:px-0">
+
+          <!-- clients comments -->
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="clients-comments mt-20 px-5 md:px-0"
+          >
             <div class="swiper mySwiper2">
               <div class="swiper-wrapper">
                 <div
@@ -708,7 +805,7 @@
                       </div>
 
                       <div>
-                        <p class="text-primary font-bold">Sara Ahmed</p>
+                        <p class="text-primary font-bold">Sara Abd Khalik</p>
                         <p class="text-sm text-primary text-muted">
                           Marketing Manager
                         </p>
@@ -813,17 +910,142 @@
                 </div>
               </div>
 
-              <div class="swiper-pagination mt-4"></div>
+              <!-- <div class="swiper-pagination mt-4"></div> -->
               <!-- <div class="swiper-button-prev"></div>
               <div class="swiper-button-next"></div> -->
             </div>
           </div>
         </div>
       </section>
+
+      <!-- contact_me -->
+      <section
+        v-show="activeSection == 'contact_me'"
+        id="contact_me"
+        class="px-5 md:px-20 py-5 md:py-15 overflow-scroll md:overflow-hidden bg-base-100 flex flex-col"
+      >
+        <h1
+          data-aos="fade-down"
+          class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none mb-10!"
+        >
+          Contact Me
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 ms-5">
+          <div class="ps-5!" data-aos="fade-right">
+            <h1 class="text-2xl mb-8 font-bold text-primary">
+              Join our success — you're the next client!
+            </h1>
+
+            <div class="flex flex-col gap-5 ms-5">
+              <div class="flex flex-row gap-3 items-center">
+                <span class="bi bi-telephone-fill text-primary text-2xl"></span>
+                <a
+                  href="tel:+201144820078"
+                  class="text-primary text-sm md:text-lg hover:underline"
+                  >+201144820078</a
+                >
+              </div>
+              <div class="flex flex-row gap-3 items-center">
+                <span class="bi bi-phone-fill text-primary text-2xl"></span>
+                <a
+                  href="tel:+201557913665"
+                  class="text-primary text-sm md:text-lg hover:underline"
+                  >+201557913665</a
+                >
+              </div>
+              <div class="flex flex-row gap-3 items-center">
+                <span class="bi bi-envelope-fill text-primary text-2xl"></span>
+                <a
+                  href="mailto:asharkawy267@gmail.com"
+                  class="text-primary text-sm md:text-lg hover:link-hover"
+                >
+                  asharkawy267@gmail.com
+                </a>
+              </div>
+              <div class="flex flex-row gap-3 items-center">
+                <span class="bi bi-geo-alt-fill text-primary text-2xl"></span>
+                <p class="text-primary text-sm md:text-lg">
+                  Al Gamaliya, Cairo, Egypt
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- map -->
+          <div
+            class="h-full! w-full flex justify-center items-center mt-8 md:mt-0"
+            data-aos="fade-left"
+          >
+            <iframe
+              class="map-frame w-full h-96 md:h-full rounded-lg"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d215.85798333757486!2d31.275732555745666!3d30.04466800359853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1762829384965!5m2!1sen!2seg"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="mt-10 mb-20 grow">
+          <div class="grid grid-cols-1 md:grid-cols-4 h-full">
+            <div class="flex justify-center items-center">
+              <a class="btn3d" href="http://wa.me/201144820078" target="_blank">
+                <i
+                  class="bi bi-whatsapp"
+                  style="font-size: 2em; color: #25d366"
+                ></i>
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="flex justify-center items-center">
+              <a class="btn3d" href="https://t.me/Qww1ww" target="_blank">
+                <i
+                  class="bi bi-telegram"
+                  style="font-size: 2em; color: #0088cc"
+                ></i>
+                Telegram
+              </a>
+            </div>
+            <div class="flex justify-center items-center">
+              <a
+                class="btn3d"
+                href="https://www.instagram.com/adham_shrakawy?igsh=MTRsdWQ2amRmazBhMg%3D%3D&utm_source=qr"
+                target="_blank"
+              >
+                <i
+                  class="bi bi-instagram"
+                  style="font-size: 2em; color: #e1306c"
+                ></i>
+                Instagram
+              </a>
+            </div>
+            <div class="flex justify-center items-center">
+              <a
+                class="btn3d"
+                href="https://www.facebook.com/share/1Cwpt9PpV3/?mibextid=wwXIfr"
+                target="_blank"
+              >
+                <i
+                  class="bi bi-facebook"
+                  style="font-size: 2em; color: #3b5998"
+                ></i>
+                facebook
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="text-sm text-center text-primary">
+          © 2024 Adham Elsharkawy. All rights reserved.
+        </p>
+      </section>
     </main>
 
     <!-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="src/js/text.js"></script>
     <script src="src/js/ticker.js"></script>
     <!-- TODO: when prod -->
@@ -843,18 +1065,24 @@
             const hash = window.location.hash.replace("#", "");
             if (hash) {
               this.activeSection = hash;
+              const section = document.getElementById(hash);
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                const animatedElements = section.querySelectorAll("[data-aos]");
+
+                animatedElements.forEach((el) => {
+                  el.classList.remove("aos-animate");
+                });
+
+                setTimeout(() => {
+                  AOS.refreshHard(); // أقوى من refresh ويعيد كل الحسابات
+                  animatedElements.forEach((el) => {
+                    el.classList.add("aos-animate");
+                  });
+                }, 100); // تأخير بسيط لضمان التفعيل
+              }
             }
-            // const hash = window.location.hash.replace("#", "");
-            // const section = document.getElementById(hash);
-            // const navBtn = document.getElementById(hash + "Btn");
-            // if (hash) {
-            //   const navBtns = document.querySelectorAll(".nav-button");
-            //   navBtns.forEach((btn) => {
-            //     btn.classList.remove("nav-button-active");
-            //   });
-            //   navBtn.classList.add("nav-button-active");
-            //   section.scrollIntoView({ behavior: "smooth" });
-            // }
           },
           swperHome() {
             var swiper = new Swiper(".mySwiper", {
@@ -895,25 +1123,45 @@
           scrollTo(id) {
             this.activeSection = id;
             window.location.hash = id;
-            // const section = document.getElementById(id);
-            // const navBtn = document.getElementById(id + "Btn");
-            // if (section) {
-            //   const navBtns = document.querySelectorAll(".nav-button");
-            //   navBtns.forEach((btn) => {
-            //     btn.classList.remove("nav-button-active");
-            //   });
-            //   navBtn.classList.add("nav-button-active");
-            //   section.scrollIntoView({ behavior: "smooth" });
-            // }
+
+            const section = document.getElementById(id);
+            if (section) {
+              const animatedElements = section.querySelectorAll("[data-aos]");
+
+              animatedElements.forEach((el) => {
+                el.classList.remove("aos-animate");
+              });
+
+              setTimeout(() => {
+                AOS.refreshHard();
+                animatedElements.forEach((el) => {
+                  el.classList.add("aos-animate");
+                });
+              }, 100);
+            }
           },
-          ScrollToInner(id) {
+          scrollToInner(id) {
             const section = document.getElementById(id);
             if (section) {
               section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+              const animatedElements = section.querySelectorAll("[data-aos]");
+
+              animatedElements.forEach((el) => {
+                el.classList.remove("aos-animate");
+              });
+
+              setTimeout(() => {
+                AOS.refreshHard(); // أقوى من refresh ويعيد كل الحسابات
+                animatedElements.forEach((el) => {
+                  el.classList.add("aos-animate");
+                });
+              }, 100); // تأخير بسيط لضمان التفعيل
             }
           },
         },
         mounted() {
+          AOS.init();
           const video = document.querySelector("video");
           video.muted = false;
           video.volume = 1.0;
