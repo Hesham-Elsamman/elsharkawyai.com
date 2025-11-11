@@ -138,11 +138,7 @@
       </div>
 
       <!-- home -->
-      <section
-        v-show="activeSection == 'home'"
-        id="home"
-        class="px-5 md:px-20 py-5 md:py-15 overflow-hidden"
-      >
+      <section id="home" class="px-5 md:px-20 py-5 md:py-15 overflow-hidden">
         <h1
           data-aos="fade-down-right"
           class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
@@ -547,11 +543,7 @@
       </section>
 
       <!-- skills -->
-      <section
-        v-show="activeSection == 'skills'"
-        id="skills"
-        class="overflow-hidden"
-      >
+      <section id="skills" class="overflow-hidden">
         <!-- hero -->
         <div
           id="heroSection"
@@ -920,7 +912,6 @@
 
       <!-- contact_me -->
       <section
-        v-show="activeSection == 'contact_me'"
         id="contact_me"
         class="px-5 md:px-20 py-5 md:py-15 overflow-scroll md:overflow-hidden bg-base-100 flex flex-col"
       >
@@ -991,7 +982,12 @@
         <div class="mt-10 mb-20 grow">
           <div class="grid grid-cols-1 md:grid-cols-4 h-full">
             <div class="flex justify-center items-center">
-              <a class="btn3d" href="http://wa.me/201144820078" target="_blank">
+              <a
+                role="banner"
+                class="btn3d"
+                href="http://wa.me/201144820078"
+                target="_blank"
+              >
                 <i
                   class="bi bi-whatsapp"
                   style="font-size: 2em; color: #25d366"
@@ -1001,7 +997,12 @@
             </div>
 
             <div class="flex justify-center items-center">
-              <a class="btn3d" href="https://t.me/Qww1ww" target="_blank">
+              <a
+                role="banner"
+                class="btn3d"
+                href="https://t.me/Qww1ww"
+                target="_blank"
+              >
                 <i
                   class="bi bi-telegram"
                   style="font-size: 2em; color: #0088cc"
@@ -1011,6 +1012,7 @@
             </div>
             <div class="flex justify-center items-center">
               <a
+                role="banner"
                 class="btn3d"
                 href="https://www.instagram.com/adham_shrakawy?igsh=MTRsdWQ2amRmazBhMg%3D%3D&utm_source=qr"
                 target="_blank"
@@ -1024,6 +1026,7 @@
             </div>
             <div class="flex justify-center items-center">
               <a
+                role="banner"
                 class="btn3d"
                 href="https://www.facebook.com/share/1Cwpt9PpV3/?mibextid=wwXIfr"
                 target="_blank"
