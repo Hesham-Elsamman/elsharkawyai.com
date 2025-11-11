@@ -138,7 +138,11 @@
       </div>
 
       <!-- home -->
-      <section id="home" class="px-5 md:px-20 py-5 md:py-15 overflow-hidden">
+      <section
+        v-show="activeSection == 'home'"
+        id="home"
+        class="px-5 md:px-20 py-5 md:py-15 overflow-hidden"
+      >
         <h1
           data-aos="fade-down-right"
           class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none"
@@ -543,7 +547,11 @@
       </section>
 
       <!-- skills -->
-      <section id="skills" class="overflow-hidden">
+      <section
+        v-show="activeSection == 'skills'"
+        id="skills"
+        class="overflow-hidden"
+      >
         <!-- hero -->
         <div
           id="heroSection"
@@ -663,13 +671,9 @@
           </h1>
 
           <!-- cards stats -->
-          <div class="grid grid-cols-1 md:grid-cols-3 p-10 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 p-10 gap-10 md:gap-6">
             <!-- -------------------------------------------------------------------------------------- -->
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1500"
-              class="flex justify-center items-center"
-            >
+            <div class="flex justify-center items-center">
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -700,11 +704,7 @@
               </div>
             </div>
             <!-- -------------------------------------------------------------------------------------- -->
-            <div
-              data-aos="fade-down"
-              data-aos-duration="1800"
-              class="flex justify-center items-center"
-            >
+            <div class="flex justify-center items-center">
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -736,11 +736,7 @@
               </div>
             </div>
             <!-- -------------------------------------------------------------------------------------- -->
-            <div
-              data-aos="fade-down"
-              data-aos-duration="2100"
-              class="flex justify-center items-center"
-            >
+            <div class="flex justify-center items-center">
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
@@ -774,11 +770,7 @@
           </div>
 
           <!-- clients comments -->
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            class="clients-comments mt-20 px-5 md:px-0"
-          >
+          <div class="clients-comments mt-20 px-5 md:px-0">
             <div class="swiper mySwiper2">
               <div class="swiper-wrapper">
                 <div
@@ -912,6 +904,7 @@
 
       <!-- contact_me -->
       <section
+        v-show="activeSection == 'contact_me'"
         id="contact_me"
         class="px-5 md:px-20 py-5 md:py-15 overflow-scroll md:overflow-hidden bg-base-100 flex flex-col"
       >
@@ -928,7 +921,7 @@
               Join our success — you're the next client!
             </h1>
 
-            <div class="flex flex-col gap-5 ms-5">
+            <div class="flex flex-col gap-5 md:ms-5">
               <div class="flex flex-row gap-3 items-center">
                 <span class="bi bi-telephone-fill text-primary text-2xl"></span>
                 <a
