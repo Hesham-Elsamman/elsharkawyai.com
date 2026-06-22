@@ -1,0 +1,645 @@
+/* -------------------------------------------------------------------------- */
+/* HOME PAGE CINEMATIC STYLES */
+/* -------------------------------------------------------------------------- */
+
+.hero-title {
+  font-family: "Ubuntu", "Cairo", sans-serif;
+  color: #ffffff;
+  text-shadow:
+    0 0 10px rgba(39, 172, 244, 0.3),
+    0 0 20px rgba(39, 172, 244, 0.1);
+  display: inline-block;
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+}
+
+[lang="ar"] .hero-title {
+  font-family: "Cairo", sans-serif;
+  font-weight: 900;
+}
+
+.hero-subtitle {
+  font-family: "Outfit", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+[lang="ar"] .hero-subtitle {
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.char {
+  display: inline-block;
+  cursor: default;
+  position: relative;
+  color: #ffffff;
+}
+
+.title-full-hover {
+  transition:
+    transform 0.4s ease,
+    color 0.4s,
+    text-shadow 0.4s;
+  display: inline-block;
+}
+
+.title-full-hover:hover {
+  transform: scale(1.05);
+  color: var(--color-primary);
+  text-shadow:
+    0 0 10px var(--color-primary),
+    0 0 30px var(--color-primary);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gsap-float {
+  animation: gsapFloat 4s ease-in-out infinite;
+}
+
+@keyframes gsapFloat {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-10px, -20px);
+  }
+}
+
+.marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ScrollTrigger Specifics */
+.gsap-reveal,
+.gsap-reveal-left,
+.gsap-reveal-right {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* GSAP Pinning Support Styles */
+#home {
+  position: relative; /* Let GSAP handle the pinning */
+  z-index: 1;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+#about {
+  position: relative;
+  z-index: 10; /* Above the pinned hero */
+  background: var(--color-base-100);
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* -------------------------------------------------------------------------- */
+/* SERVICES & ACCORDION STYLES */
+/* -------------------------------------------------------------------------- */
+
+.service-item {
+  transition:
+    background-color 0.4s ease,
+    padding 0.4s ease;
+  will-change: transform, background-color;
+  contain: layout style;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  background: rgba(var(--color-primary), 0.02);
+}
+
+.service-item.active {
+  background: rgba(var(--color-primary), 0.04);
+}
+
+.service-num {
+  font-family: "Outfit", sans-serif;
+  opacity: 0.1;
+  transition:
+    opacity 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.service-item.active .service-num {
+  opacity: 1;
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.service-tag {
+  @apply px-3 py-1 text-[10px] uppercase tracking-wider font-bold border border-base-content/10 rounded-full text-base-content/40 transition-colors duration-300;
+}
+
+.service-item:hover .service-tag {
+  @apply border-primary/30 text-primary/60 bg-primary/5;
+}
+
+.service-num {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item:hover .service-num {
+  color: var(--color-primary);
+  opacity: 0.25;
+  text-shadow: 0 0 20px var(--color-primary);
+}
+
+.service-item.active .service-num {
+  color: var(--color-primary);
+  opacity: 1;
+  text-shadow: 0 0 30px var(--color-primary);
+}
+
+/* Accordion Logic */
+.service-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition:
+    grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.4s ease;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.service-item.active .service-accordion-content {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.service-accordion-inner {
+  min-height: 0;
+}
+
+.skill-snippet-card {
+  @apply flex items-center gap-3 px-3 py-1.5 rounded-xl bg-base-content/5 border border-base-content/5 backdrop-blur-sm transition-all duration-500 ease-out;
+}
+
+.skill-snippet-card:hover {
+  @apply bg-primary/5 border-primary/20 -translate-y-0.5;
+}
+
+.skill-logo {
+  @apply w-7 h-7 object-contain transition-transform duration-500;
+}
+
+.skill-snippet-card:hover .skill-logo {
+  @apply scale-105;
+}
+
+.skill-name {
+  @apply text-xs font-bold opacity-40 transition-opacity duration-300;
+}
+
+.skill-snippet-card:hover .skill-name {
+  @apply opacity-80;
+}
+
+/* RTL Adjustments */
+[lang="ar"] .hero-title {
+  letter-spacing: 0;
+}
+[lang="ar"] .service-num {
+  font-family: "Cairo", sans-serif;
+}
+
+.services-title-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services-signature-svg {
+  width: 100%;
+  max-width: 500px;
+  height: 100px;
+  overflow: visible;
+  filter: drop-shadow(0px 0px 10px var(--color-primary));
+  margin-bottom: -10px;
+}
+
+.services-signature-text {
+  font-family: "Great Vibes", cursive;
+  font-size: 5.5rem;
+  fill: transparent;
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 3000;
+  stroke-dashoffset: 3000;
+}
+
+[lang="ar"] .services-signature-text {
+  font-family: "Cairo", sans-serif;
+  font-size: 4.2rem;
+  font-weight: 900;
+}
+
+@media (max-width: 768px) {
+  .services-signature-svg {
+    height: 80px;
+  }
+  .services-signature-text {
+    font-size: 4.5rem;
+  }
+  [lang="ar"] .services-signature-text {
+    font-size: 3.5rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* BUTTON MARKER STYLES (Contact Button) */
+/* -------------------------------------------------------------------------- */
+[data-theme="vscode"] .button-marker {
+  --line_color: #27acf4;
+  --back_color: rgba(39, 172, 244, 0.2);
+}
+
+[data-theme="spotify"] .button-marker {
+  --line_color: #00bd67;
+  --back_color: rgba(0, 189, 103, 0.2);
+}
+
+[data-theme="black"] .button-marker {
+  --line_color: #f5f5f7;
+  --back_color: rgba(245, 245, 247, 0.2);
+}
+
+.button-marker {
+  position: relative;
+  z-index: 0;
+  width: 240px;
+  height: 56px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--line_color);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.button-marker__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.button-marker::before,
+.button-marker::after,
+.button-marker__text::before,
+.button-marker__text::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--line_color);
+  transition: all 0.5s ease;
+}
+
+.button-marker::before {
+  top: 0;
+  left: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.button-marker::after {
+  top: 0;
+  right: 54px;
+  width: 8px;
+}
+
+.button-marker__text::before {
+  bottom: 0;
+  right: 54px;
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.button-marker__text::after {
+  bottom: 0;
+  left: 54px;
+  width: 8px;
+}
+
+.button-marker__line {
+  position: absolute;
+  top: 0;
+  width: 56px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.button-marker__line::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 300px;
+  border: solid 3px var(--line_color);
+}
+
+.button-marker__line:nth-child(1),
+.button-marker__line:nth-child(1)::before {
+  left: 0;
+}
+
+.button-marker__line:nth-child(2),
+.button-marker__line:nth-child(2)::before {
+  right: 0;
+}
+
+.button-marker:hover {
+  letter-spacing: 6px;
+}
+
+.button-marker:hover::before,
+.button-marker:hover .button-marker__text::before {
+  width: 8px;
+}
+
+.button-marker:hover::after,
+.button-marker:hover .button-marker__text::after {
+  width: calc(100% - 56px * 2 - 16px);
+}
+
+.button-marker__drow1,
+.button-marker__drow2 {
+  position: absolute;
+  z-index: -1;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+}
+
+.button-marker__drow1 {
+  top: -16px;
+  left: 40px;
+  width: 32px;
+  height: 0;
+  transform: rotate(30deg);
+}
+
+.button-marker__drow2 {
+  top: 44px;
+  left: 77px;
+  width: 32px;
+  height: 0;
+  transform: rotate(-127deg);
+}
+
+.button-marker__drow1::before,
+.button-marker__drow1::after,
+.button-marker__drow2::before,
+.button-marker__drow2::after {
+  content: "";
+  position: absolute;
+}
+
+.button-marker__drow1::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-60deg);
+}
+
+.button-marker__drow1::after {
+  top: -10px;
+  left: 45px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(69deg);
+}
+
+.button-marker__drow2::before {
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-146deg);
+}
+
+.button-marker__drow2::after {
+  bottom: 26px;
+  left: -40px;
+  width: 0;
+  height: 32px;
+  border-radius: 16px;
+  transform-origin: 16px 16px;
+  transform: rotate(-262deg);
+}
+
+.button-marker__drow1,
+.button-marker__drow1::before,
+.button-marker__drow1::after,
+.button-marker__drow2,
+.button-marker__drow2::before,
+.button-marker__drow2::after {
+  background: var(--back_color);
+}
+
+.button-marker:hover .button-marker__drow1 {
+  animation: drow1 ease-in 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.button-marker:hover .button-marker__drow1::before {
+  animation: drow2 linear 0.08s 0.06s;
+  animation-fill-mode: forwards;
+}
+
+.button-marker:hover .button-marker__drow1::after {
+  animation: drow3 linear 0.03s 0.14s;
+  animation-fill-mode: forwards;
+}
+
+.button-marker:hover .button-marker__drow2 {
+  animation: drow4 linear 0.06s 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.button-marker:hover .button-marker__drow2::before {
+  animation: drow3 linear 0.03s 0.26s;
+  animation-fill-mode: forwards;
+}
+
+.button-marker:hover .button-marker__drow2::after {
+  animation: drow5 linear 0.06s 0.32s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drow1 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes drow2 {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  11% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 120px;
+  }
+}
+
+@keyframes drow3 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 80px;
+  }
+}
+
+@keyframes drow4 {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 120px;
+  }
+}
+
+@keyframes drow5 {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 124px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* WICKED LIONFISH BUTTON STYLES (Works Button) */
+/* -------------------------------------------------------------------------- */
+[data-theme="vscode"] .wicked-lionfish-btn {
+  --btn-bg: #0e111b;
+  --btn-color: #ffffff;
+  --btn-shadow: #27acf4;
+  --btn-hover-start: rgba(39, 172, 244, 0.681);
+  --btn-hover-end: rgba(39, 172, 244, 0.873);
+  --btn-hover-color: #0e111b;
+}
+
+[data-theme="spotify"] .wicked-lionfish-btn {
+  --btn-bg: #12151d;
+  --btn-color: #ffffff;
+  --btn-shadow: #00bd67;
+  --btn-hover-start: rgba(0, 189, 103, 0.681);
+  --btn-hover-end: rgba(0, 189, 103, 0.873);
+  --btn-hover-color: #12151d;
+}
+
+[data-theme="black"] .wicked-lionfish-btn {
+  --btn-bg: #1d1d20;
+  --btn-color: #f5f5f7;
+  --btn-shadow: #f5f5f7;
+  --btn-hover-start: rgba(245, 245, 247, 0.681);
+  --btn-hover-end: rgba(245, 245, 247, 0.873);
+  --btn-hover-color: #1d1d20;
+}
+
+.wicked-lionfish-btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px var(--btn-shadow);
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+  text-decoration: none;
+  display: inline-block;
+}
+
+.wicked-lionfish-btn:active {
+  scale: 0.92;
+}
+
+.wicked-lionfish-btn:hover {
+  background: linear-gradient(270deg, var(--btn-hover-start) 0%, var(--btn-hover-end) 60%);
+  color: var(--btn-hover-color);
+}
+
+/* Inverse version for contact button */
+[data-theme="vscode"] .wicked-lionfish-btn-inverse {
+  --btn-bg: #27acf4;
+  --btn-color: #0e111b;
+  --btn-shadow: #0e111b;
+  --btn-hover-start: rgba(14, 17, 27, 0.681);
+  --btn-hover-end: rgba(14, 17, 27, 0.873);
+  --btn-hover-color: #27acf4;
+}
+
+[data-theme="spotify"] .wicked-lionfish-btn-inverse {
+  --btn-bg: #00bd67;
+  --btn-color: #12151d;
+  --btn-shadow: #12151d;
+  --btn-hover-start: rgba(18, 21, 29, 0.681);
+  --btn-hover-end: rgba(18, 21, 29, 0.873);
+  --btn-hover-color: #00bd67;
+}
+
+[data-theme="black"] .wicked-lionfish-btn-inverse {
+  --btn-bg: #f5f5f7;
+  --btn-color: #1d1d20;
+  --btn-shadow: #1d1d20;
+  --btn-hover-start: rgba(29, 29, 32, 0.681);
+  --btn-hover-end: rgba(29, 29, 32, 0.873);
+  --btn-hover-color: #f5f5f7;
+}

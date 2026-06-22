@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght,wdth,slnt@100..1000,25..151,-10..0&display=swap');
+
+.text-pressure-container {
+    display: inline-block;
+    cursor: default;
+    user-select: none;
+    line-height: 1;
+}
+
+.text-pressure-char {
+    display: inline-block;
+    font-family: 'Roboto Flex', sans-serif;
+    will-change: font-variation-settings, transform;
+    /* Default state: thin and narrow */
+    font-variation-settings: 'wght' 100, 'wdth' 50, 'slnt' 0;
+    transition: font-variation-settings 0.1s ease-out;
+}
+
+/* Base styles for the demo */
+[data-text-pressure] {
+    font-family: 'Roboto Flex', sans-serif;
+    color: white;
+}

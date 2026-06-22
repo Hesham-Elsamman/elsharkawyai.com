@@ -4,11 +4,13 @@ var TxtType = function (el, toRotate, period) {
   this.loopNum = 0;
   this.period = parseInt(period, 10) || 2000;
   this.txt = "";
-  this.tick();
   this.isDeleting = false;
+  this.timeout = null;
+  this.tick();
 };
 
 TxtType.prototype.tick = function () {
+  if (!this.toRotate || this.toRotate.length === 0) return;
   var i = this.loopNum % this.toRotate.length;
   var fullTxt = this.toRotate[i];
 
@@ -21,7 +23,7 @@ TxtType.prototype.tick = function () {
   this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
 
   var that = this;
-  var delta = 200 - Math.random() * 100;
+  var delta = 150 - Math.random() * 50; // slightly faster typing
 
   if (this.isDeleting) {
     delta /= 2;
@@ -33,28 +35,56 @@ TxtType.prototype.tick = function () {
   } else if (this.isDeleting && this.txt === "") {
     this.isDeleting = false;
     this.loopNum++;
-    delta = 500;
+    delta = 400;
   }
 
-  setTimeout(function () {
+  // Clear previous timeout to avoid overlapping loops
+  if (this.timeout) clearTimeout(this.timeout);
+
+  this.timeout = setTimeout(function () {
     that.tick();
   }, delta);
 };
 
-window.onload = function () {
+TxtType.prototype.updateData = function(newRotate) {
+    this.toRotate = newRotate;
+    // reset to type the new arrays immediately
+    this.txt = "";
+    this.loopNum = 0;
+    this.isDeleting = false;
+    if (this.timeout) clearTimeout(this.timeout);
+    this.tick();
+}
+
+window.typewriters = [];
+
+function initTypewriters() {
   var elements = document.getElementsByClassName("typewrite");
+  window.typewriters = [];
   for (var i = 0; i < elements.length; i++) {
     var toRotate = elements[i].getAttribute("data-type");
     var period = elements[i].getAttribute("data-period");
     if (toRotate) {
-      new TxtType(elements[i], JSON.parse(toRotate), period);
+      window.typewriters.push(new TxtType(elements[i], JSON.parse(toRotate), period));
+      // store in element for direct access
+      elements[i].txtTypeInstance = window.typewriters[window.typewriters.length - 1];
     }
   }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  document.body.appendChild(css);
-};
+}
+
+window.addEventListener('DOMContentLoaded', initTypewriters);
+
+window.addEventListener('languageChanged', function() {
+  var elements = document.getElementsByClassName("typewrite");
+  for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements[i].getAttribute("data-type");
+    if (toRotate && elements[i].txtTypeInstance) {
+      elements[i].txtTypeInstance.updateData(JSON.parse(toRotate));
+    }
+  }
+});
+
+// Original scroll behavior for fade-in elements
 window.addEventListener("scroll", function () {
   let elements = document.querySelectorAll(".element");
   elements.forEach((el) => {

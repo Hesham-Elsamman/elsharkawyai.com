@@ -1,0 +1,25 @@
+.electric-border-ready {
+    overflow: visible !important;
+    isolation: isolate;
+}
+
+.electric-border-canvas-wrapper {
+    overflow: visible;
+}
+
+.electric-border-canvas {
+    display: block;
+    max-width: none !important;
+}
+
+.electric-border-glows div {
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+/* Ensure children are above the border flows */
+.electric-border-content {
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+}

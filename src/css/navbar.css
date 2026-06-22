@@ -1,0 +1,346 @@
+/* ==========================================================================
+   Modern Professional Navbar Styles - Premium Refinement
+   ========================================================================== */
+
+:root {
+    --nav-height: 64px;
+    --nav-height-mobile: 60px;
+}
+
+#main-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-desktop-only { display: flex !important; }
+.nav-mobile-only { display: none !important; }
+
+.navbar-container {
+    width: 100%;
+    height: var(--nav-height);
+    padding: 0 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.glass {
+    background: rgba(14, 17, 27, 0.6);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.navbar-container.scrolled {
+    height: 56px;
+    border-bottom: 2px solid var(--color-primary);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-content {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Premium Logo Styling */
+.nav-logo .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    flex-direction: row !important;
+    direction: ltr !important; /* Lock branding order regardless of RTL */
+}
+
+.nav-logo .logo-link:hover {
+    transform: scale(1.02);
+}
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    filter: drop-shadow(0 0 12px var(--color-primary));
+}
+
+.logo-text {
+    font-family: 'Outfit', 'Archivo Black', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: oklch(var(--bc));
+    text-transform: uppercase;
+    transform: translateY(2px); /* Fine-tuned alignment */
+}
+
+.logo-text .highlight {
+    color: var(--color-primary);
+    position: relative;
+    margin-left: 2px;
+    font-weight: 900;
+    text-shadow: 0 0 10px var(--color-primary);
+}
+
+/* Nav Links & Page Tracking */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-link-item {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: oklch(var(--bc));
+    opacity: 0.6;
+    text-decoration: none;
+    position: relative;
+    padding: 6px 0;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link-item:hover, .nav-link-item.active {
+    opacity: 1;
+    color: var(--color-primary);
+}
+
+.nav-link-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--color-primary);
+}
+
+.nav-link-item.active::after {
+    width: 100%;
+}
+
+/* Controls */
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.control-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid oklch(var(--p) / 0.2);
+    background: rgba(255, 255, 255, 0.03);
+    color: oklch(var(--bc));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+}
+
+.control-btn:hover {
+    background: oklch(var(--p) / 0.1);
+    border-color: oklch(var(--p));
+    color: oklch(var(--p));
+    box-shadow: 0 0 15px oklch(var(--p) / 0.3);
+}
+
+.lang-btn {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 900;
+}
+
+/* WhatsApp Nav Button */
+.whatsapp-btn-nav {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: pulse-whatsapp 2s infinite;
+}
+
+@keyframes pulse-whatsapp {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* CREATIVE Theme Switcher: THEME ORBS */
+.theme-orb-rail {
+    position: absolute;
+    top: 50%;
+    right: calc(100% + 15px);
+    transform: translateY(-50%) translateX(20px);
+    display: flex;
+    gap: 12px;
+    padding: 8px 15px;
+    border-radius: 40px;
+    background: rgba(14, 17, 27, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1001;
+}
+
+.theme-orb-rail.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+.theme-orb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: default;
+    position: relative;
+    border: 2px solid var(--orb-primary);
+    background: var(--orb-bg);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.theme-orb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px var(--orb-primary);
+}
+
+.theme-orb.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--orb-primary);
+}
+
+.theme-orb.active::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: var(--orb-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--orb-primary);
+    animation: orbPulse 1.5s infinite alternate;
+}
+
+@keyframes orbPulse {
+    from { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+[dir="rtl"] .theme-orb-rail {
+    right: auto;
+    left: calc(100% + 15px);
+    transform: translateY(-50%) translateX(-20px);
+}
+
+[dir="rtl"] .theme-orb-rail.show {
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Mobile responsive fixes */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    pointer-events: none;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.mobile-menu-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: rgba(14, 17, 27, 0.98);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu-overlay.active .mobile-menu-panel {
+    transform: translateX(0);
+}
+
+.close-mobile-menu {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    color: oklch(var(--p));
+    font-size: 2.5rem;
+    cursor: default;
+    margin-bottom: 40px;
+}
+
+.mobile-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mobile-links .nav-link-item {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 991px) {
+    .navbar-container { padding: 0 20px; height: var(--nav-height-mobile); }
+    .nav-desktop-only { display: none !important; }
+    .nav-mobile-only { display: flex !important; }
+    .logo-text { font-size: 1rem; }
+}
+
+[dir="rtl"] .navbar-content { flex-direction: row-reverse; }
+[dir="rtl"] .nav-links { flex-direction: row-reverse; }
+[dir="rtl"] .nav-controls { flex-direction: row-reverse; }
+[dir="rtl"] .mobile-menu-panel { right: auto; left: 0; transform: translateX(-100%); }
+[dir="rtl"] .mobile-menu-overlay.active .mobile-menu-panel { transform: translateX(0); }

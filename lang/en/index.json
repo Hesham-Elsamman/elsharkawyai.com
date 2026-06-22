@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "title": "Adham Sharkawy",
+    "subtitle": "Architecting the Future of Cinematic AI Storytelling",
+    "cta": "View My Work",
+    "btn_works": "My Work",
+    "btn_contact": "Let's Talk"
+  },
+  "about": {
+    "title": "Reimagining Imagination",
+    "description1": "By blending the profound magic of cinematic storytelling with the limitless genius of generative AI, I transform abstract concepts into living, breathing visual realities. My goal goes far beyond standard video production; I strive to invent extraordinary characters and craft visually stunning landscapes that defy convention.",
+    "description2": "Every project represents a new opportunity to weave a spectacular visual narrative that redefines what a screen can reveal. Integrating cutting-edge technology with boundless imagination, I deliver an immersive visual experience designed to leave an unforgettable impact on every viewer.",
+    "title2": "Impact Beyond the Screen: Amplifying Your Message",
+    "description3": "My work extends beyond visual brilliance to serve as a powerful marketing engine that drives your goals and benefits society. I meticulously craft visual narratives to ensure your core message is delivered with absolute clarity, fostering a genuine connection that elevates your brand and leaves a positive, lasting impact.",
+    "more": "Discover My Vision"
+  },
+  "services": {
+    "label": "What I Do",
+    "title": "Craft & Vision",
+    "subtitle": "Three disciplines. One creative mind.",
+    "storytelling": {
+      "title": "Ad Production",
+      "desc": "TV commercials & brand campaign production",
+      "snippet": "I direct advertising films that sell without feeling like ads. My process starts with a single human truth — a feeling, a tension, a desire — and builds outward into a complete visual world. Every second earns its place. Every frame is a decision. The result is advertising that audiences remember long after the product is gone."
+    },
+    "ai_video": {
+      "title": "Short Films",
+      "desc": "Narrative cinema & story-driven production",
+      "snippet": "I write and direct short films built around characters who carry weight — people in moments of change, conflict, or quiet revelation. My approach to production is disciplined: a tight script, intentional blocking, and an edit that respects the audience's intelligence. No padding. No decoration. Just story."
+    },
+    "vfx": {
+      "title": "Cinematic Production",
+      "desc": "Full-scale production from concept to delivery",
+      "snippet": "From the first idea on a blank page to the final grade before delivery, I oversee every stage of production with the same obsessive attention to craft. I believe the gap between a good project and a great one lives in the details most people skip — the color temperature of a scene, the silence before a cut, the texture of a sound design. That gap is where I work."
+    },
+    "reels": {
+      "title": "Reels Production",
+      "desc": "Short-form vertical content for social platforms",
+      "snippet": "I produce Reels built around one thing: the hook. In the first two seconds, you either earn the watch or lose it forever. My approach is cinematic rhythm applied to vertical format — precise cuts, intentional sound, and a visual language that feels native to the feed without being disposable."
+    }
+  },
+  "stats": {
+    "projects": "Projects Done",
+    "tools": "AI Tools",
+    "clients": "Happy Clients"
+  },
+  "cta": {
+    "title": "Ready to generate your vision?",
+    "button": "Get in Touch"
+  }
+}

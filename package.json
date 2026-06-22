@@ -1,6 +1,6 @@
 {
-  "name": "elsharkawyai.com",
-  "version": "1.0.0",
+  "name": "adham-sharkawy.com",
+  "version": "2.5.5",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -8,10 +8,10 @@
     "build": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css"
   },
   "keywords": [],
-  "author": "heshamElsamman",
+  "author": "HeshamElsamman",
   "license": "ISC",
   "description": "Personal Portfolio Website for AI Services Provider",
-  "homepage": "https://elsharkawyai.com",
+  "homepage": "https://adham-sharkawy.com",
   "bugs": {
     "url": "https://github.com/heshamElsamman/elsharkawyai.com/issues"
   },

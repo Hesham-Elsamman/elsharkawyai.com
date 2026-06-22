@@ -1,0 +1,41 @@
+{
+    "works": {
+        "hero": {
+            "label": "Portfolio",
+            "title": "Crafting\nVisual Stories",
+            "about": "Transforming ideas into powerful visual narratives through cinematic excellence and creative innovation.",
+            "subtitle": "From concept to creation — delivering impactful visual experiences that resonate and inspire.",
+            "scroll": "Explore"
+        },
+        "categories": {
+            "label": "Disciplines",
+            "title": "What You'll Find Here"
+        },
+        "cat": {
+            "ads": {
+                "title": "Ad Production",
+                "desc": "TV commercials and social media campaigns built for impact."
+            },
+            "films": {
+                "title": "Short Films",
+                "desc": "Narrative cinema — stories that carry real weight."
+            },
+            "reels": {
+                "title": "Reels & Clips",
+                "desc": "Short-form vertical content engineered for the scroll."
+            },
+            "cinema": {
+                "title": "Cinematic Production",
+                "desc": "Full-scale production from concept to final grade."
+            },
+            "strategy": {
+                "title": "Strategic Marketing Thinking",
+                "desc": "Every project begins with a question: what do we actually want people to feel?"
+            }
+        },
+        "videos": {
+            "label": "The Work",
+            "title": "Watch & Feel"
+        }
+    }
+}

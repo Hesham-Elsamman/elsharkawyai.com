@@ -1,18 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import "tailwindcss";
+@import "./home.css";
 
 @plugin "flyonui" {
-  themes: vscode --default, vscode --prefersdark, vscode;
+  themes: all;
 }
 @import "../../node_modules/flyonui/variants.css";
 
 @source "../../node_modules/flyonui/dist/index.js";
+    /*
+    --color-base-100
+    --color-base-200
+    --color-base-300
+    --color-base-content
+    --color-primary
+    --color-primary-content
+    --color-secondary
+    --color-secondary-content
+    --color-accent
+    --color-accent-content
+    --color-neutral
+    --color-neutral-content
+    --color-info
+    --color-info-content
+    --color-success
+    --color-success-content
+    --color-warning
+    --color-warning-content
+    --color-error
+    --color-error-content: 
+    */
+[data-theme="vscode"] {
+    --color-primary: #27acf4;
+    --color-primary-content: #ffffff;
+    --color-base-100: #0e111b;
+    --color-base-content: #ffffff;
+}
 
+[data-theme="spotify"] {
+    --color-primary: #00bd67;
+    --color-primary-content: #ffffff;
+    --color-base-100: #12151d;
+    --color-base-content: #ffffff;
+}
+
+[data-theme="black"] {
+    --color-primary: #f5f5f7;
+    --color-primary-content: #000000;
+    --color-base-100: #1d1d20;
+    --color-base-content: #f5f5f7;
+}
 html {
   scroll-behavior: smooth;
   width: 100%;
   height: 100%;
+    scrollbar-width: auto; /* Firefox */
+  -ms-overflow-style: var(--color-primary);
 }
 /* header */
 .archivo {
@@ -22,8 +66,25 @@ html {
   font-family: "Libre Franklin", sans-serif;
 }
 
+/* Performance Optimization Utilities */
+.gpu-accel {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Common GSAP Classes */
+.gsap-reveal, .gsap-reveal-batch, .gsap-reveal-service {
+  will-change: transform, opacity;
+}
+
 body {
-  overflow: hidden !important;
+  overflow-y: auto !important;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 .hide-scrollbar {
   scrollbar-width: none; /* Firefox */
@@ -31,15 +92,4 @@ body {
 }
 .hide-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
-}
-.hero-title {
-  font-family: "Archivo Black", sans-serif;
-  color: #ffffffbd;
-  text-decoration: none;
-  margin-bottom: 0;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.175);
-}
-section {
-  height: 100vh;
-  width: 100vw;
 }
