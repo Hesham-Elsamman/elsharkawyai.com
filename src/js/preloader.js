@@ -114,6 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
             .pl-progress-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; margin-top: 5px; opacity: 0; }
             .pl-stroke-svg { width: 100%; height: 30px; overflow: visible; filter: drop-shadow(0 0 6px var(--color-primary)) drop-shadow(0 0 14px var(--color-primary)); }
             .pl-stroke-path { fill: none; stroke: var(--color-primary); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 560; stroke-dashoffset: 560; }
+            @media (max-width: 480px) {
+                .pl-brand-sig { font-size: calc(${sigSize} * 0.7); }
+                .pl-ai-label { font-size: 0.8rem; letter-spacing: 5px; }
+                .pl-brand-sig-svg { height: 110px; }
+            }
         `;
 
         enterTl

@@ -14,6 +14,12 @@
   opacity: 0;
 }
 
+/* Hero CTA hidden initially - GSAP animates it in after preloader */
+.hero-cta-group {
+  opacity: 0;
+  visibility: hidden;
+}
+
 [lang="ar"] .hero-title {
   font-family: "Cairo", sans-serif;
   font-weight: 900;
@@ -643,3 +649,17 @@
   --btn-hover-end: rgba(29, 29, 32, 0.873);
   --btn-hover-color: #f5f5f7;
 }
+
+@media (max-width: 480px) {
+  .wicked-lionfish-btn {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.4rem;
+    -webkit-box-reflect: unset !important; /* إزالة الانعكاس على الموبايل لمنع المساحة الإضافية بشكل قاطع */
+  }
+  
+  .hero-title {
+    font-size: 2.2rem !important; /* تصغير الخط لمنع كسر الكلمة (Adham Sharkawy) بشكل خاطئ */
+    line-height: 1.2;
+  }
+}
+

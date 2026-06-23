@@ -17,7 +17,6 @@
   <link rel="shortcut icon" href="src/assets/imgs/logo.png" type="image/x-icon" />
   <link rel="stylesheet"
     href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
-
   <link rel="stylesheet"
     href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css" />
@@ -43,6 +42,7 @@
   <header id="main-navbar"></header>
 
   <main id="app">
+
     <!-- 1. Hero Section -->
     <section id="works-hero"
       class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-20 overflow-hidden bg-base-100 z-0">
@@ -59,182 +59,163 @@
 
       <!-- Content wrapper -->
       <div class="relative z-10 text-center px-4">
-
-        <!-- Main heading — responsive fluid size with hover effects -->
         <h1
-          class="works-hero-title text-center font-black uppercase leading-[0.9] text-base-content drop-shadow-2xl cursor-default transition-all duration-500 hover:scale-105 hover:text-primary hover:drop-shadow-[0_0_30px_rgba(var(--color-primary),0.5)]"
+          class="works-hero-title text-center font-black uppercase leading-[0.9] text-base-content drop-shadow-2xl cursor-default"
           style="font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.02em;" data-i18n="works.hero.title">
         </h1>
-
-        <!-- Professional subtitle -->
-        <p class="text-base-content/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-6 drop-shadow-md font-medium"
+        <p class="works-hero-subtitle text-base-content/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-6 drop-shadow-md font-medium"
           data-i18n="works.hero.subtitle"></p>
-
       </div>
-
 
     </section>
 
     <!-- 2. Categories Grid -->
-    <section id="works-categories" class="py-24 px-5 md:px-16">
+    <section id="works-categories" class="py-16 px-5 md:px-16 lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
 
       <!-- Header -->
-      <div class="mb-14">
-        <p class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3" data-i18n="works.categories.label">
-        </p>
-        <h2 class="text-3xl md:text-5xl font-black uppercase" data-i18n="works.categories.title"></h2>
+      <div class="mb-10">
+        <p class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3" data-i18n="works.categories.label"></p>
+        <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.categories.title"></h2>
       </div>
 
-      <!-- Grid -->
-      <div class="categories-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Bento Grid — 4 cards, 2 rows, asymmetric widths -->
+      <div class="categories-grid flex flex-col gap-3 lg:flex-1">
 
-        <!-- Card: Ad Production (spans 2 cols on lg) -->
-        <div class="category-card group relative overflow-hidden rounded-2xl bg-base-200 cursor-pointer lg:col-span-2"
-          style="min-height: 320px;">
-          <img src="src/assets/imgs/adhamsharkawyhome.jpg" alt="Ad Production"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          </div>
-          <div class="relative z-10 p-8 h-full flex flex-col justify-between" style="min-height: 320px;">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.3em] drop-shadow-md">01</span>
-            <div>
-              <h3
-                class="text-2xl md:text-3xl font-black uppercase mb-2 text-white group-hover:text-primary transition-colors duration-300 drop-shadow-lg"
-                data-i18n="works.cat.ads.title">Ad Production</h3>
-              <p class="text-white text-sm leading-relaxed max-w-sm drop-shadow-md font-medium"
-                data-i18n="works.cat.ads.desc">TV commercials and social media campaigns built for impact.</p>
+        <!-- ROW 1: Ads (wide) + Short Films (narrow) -->
+        <div class="flex flex-col md:flex-row gap-3 lg:flex-1">
+
+          <!-- Card 1: Ad Production (wide ~65%) -->
+          <div onclick="document.getElementById('section-ads').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+            <img src="src/assets/imgs/work cat/ads.jpeg" alt="Ad Production"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">01</span>
+                <span class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500" data-i18n="works.cat.ads.title">Ad Production</span>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                  data-i18n="works.cat.ads.title">Ad Production</h3>
+                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium"
+                  data-i18n="works.cat.ads.desc">TV commercials and social media campaigns built for impact.</p>
+                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+              </div>
             </div>
-            <div
-              class="w-8 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
+            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+          </div>
+
+          <!-- Card 2: Short Films (narrow ~35%) -->
+          <div onclick="document.getElementById('section-films').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+            <img src="src/assets/imgs/work cat/short.jpeg" alt="Short Films"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
+              <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm self-start">02</span>
+              <div>
+                <h3 class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                  data-i18n="works.cat.films.title">Short Films</h3>
+                <p class="text-white/65 text-sm leading-relaxed font-medium"
+                  data-i18n="works.cat.films.desc">Narrative cinema — stories that carry real weight.</p>
+                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+              </div>
             </div>
+            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
           </div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left">
-          </div>
+
         </div>
 
-        <!-- Card: Short Films -->
-        <div class="category-card group relative overflow-hidden rounded-2xl bg-base-200 cursor-pointer"
-          style="min-height: 320px;">
-          <img src="src/assets/imgs/adhamsharkawyhome2.jpg" alt="Short Films"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          </div>
-          <div class="relative z-10 p-8 h-full flex flex-col justify-between" style="min-height: 320px;">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.3em] drop-shadow-md">02</span>
-            <div>
-              <h3
-                class="text-2xl font-black uppercase mb-2 text-white group-hover:text-primary transition-colors duration-300 drop-shadow-lg"
-                data-i18n="works.cat.films.title">Short Films</h3>
-              <p class="text-white text-sm leading-relaxed drop-shadow-md font-medium" data-i18n="works.cat.films.desc">
-                Narrative cinema — stories that carry real weight.</p>
-            </div>
-            <div
-              class="w-8 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
-            </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left">
-          </div>
-        </div>
+        <!-- ROW 2: Reels (narrow ~35%) + Cinematic (wide ~65%) -->
+        <div class="flex flex-col md:flex-row gap-3 lg:flex-1">
 
-        <!-- Card: Reels -->
-        <div class="category-card group relative overflow-hidden rounded-2xl bg-base-200 cursor-pointer"
-          style="min-height: 280px;">
-          <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5"></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          </div>
-          <div class="relative z-10 p-8 h-full flex flex-col justify-between" style="min-height: 280px;">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.3em]">03</span>
-            <div>
-              <h3 class="text-2xl font-black uppercase mb-2 group-hover:text-primary transition-colors duration-300"
-                data-i18n="works.cat.reels.title">Reels & Clips</h3>
-              <p class="text-base-content text-sm leading-relaxed font-medium" data-i18n="works.cat.reels.desc">
-                Short-form vertical content engineered for the scroll.</p>
+          <!-- Card 3: Reels (narrow) -->
+          <div onclick="document.getElementById('section-reels').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+            <img src="src/assets/imgs/work cat/reels.jpeg" alt="Reels & Clips"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
+              <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm self-start">03</span>
+              <div>
+                <h3 class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                  data-i18n="works.cat.reels.title">Reels & Clips</h3>
+                <p class="text-white/65 text-sm leading-relaxed font-medium"
+                  data-i18n="works.cat.reels.desc">Short-form vertical content engineered for the scroll.</p>
+                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+              </div>
             </div>
-            <div
-              class="w-8 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
-            </div>
+            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
           </div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left">
-          </div>
-        </div>
 
-        <!-- Card: Cinematic Production -->
-        <div class="category-card group relative overflow-hidden rounded-2xl bg-base-200 cursor-pointer"
-          style="min-height: 280px;">
-          <img src="src/assets/imgs/adhamsharkawyhome3.jpg" alt="Cinematic"
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          </div>
-          <div class="relative z-10 p-8 h-full flex flex-col justify-between" style="min-height: 280px;">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.3em] drop-shadow-md">04</span>
-            <div>
-              <h3
-                class="text-2xl font-black uppercase mb-2 text-white group-hover:text-primary transition-colors duration-300 drop-shadow-lg"
-                data-i18n="works.cat.cinema.title">Cinematic Production</h3>
-              <p class="text-white text-sm leading-relaxed drop-shadow-md font-medium"
-                data-i18n="works.cat.cinema.desc">Full-scale production from concept to final grade.</p>
+          <!-- Card 4: Cinematic Production (wide) -->
+          <div onclick="document.getElementById('section-cinema').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+            <img src="src/assets/imgs/work cat/cinematic.jpeg" alt="Cinematic Production"
+              class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-black/40 px-3 py-1 rounded-full backdrop-blur-sm">04</span>
+                <span class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500" data-i18n="works.cat.cinema.title">Cinematic</span>
+              </div>
+              <div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                  data-i18n="works.cat.cinema.title">Cinematic Production</h3>
+                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium"
+                  data-i18n="works.cat.cinema.desc">Full-scale production from concept to final grade.</p>
+                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+              </div>
             </div>
-            <div
-              class="w-8 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
-            </div>
+            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
           </div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left">
-          </div>
-        </div>
 
-        <!-- Card: Strategic Marketing Thinking (spans 2 cols) -->
-        <div
-          class="category-card group relative overflow-hidden rounded-2xl bg-primary/5 border border-primary/20 cursor-pointer md:col-span-2 lg:col-span-1"
-          style="min-height: 280px;">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-          </div>
-          <div class="relative z-10 p-8 h-full flex flex-col justify-between" style="min-height: 280px;">
-            <span class="text-primary text-xs font-bold uppercase tracking-[0.3em]">05</span>
-            <div>
-              <h3 class="text-2xl font-black uppercase mb-2 group-hover:text-primary transition-colors duration-300"
-                data-i18n="works.cat.strategy.title">Strategic Marketing Thinking</h3>
-              <p class="text-base-content text-sm leading-relaxed font-medium" data-i18n="works.cat.strategy.desc">Every
-                project begins with a question: what do we actually want people to feel?</p>
-            </div>
-            <div
-              class="w-8 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
-            </div>
-          </div>
-          <div
-            class="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left">
-          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- 3. Videos Section -->
-    <section id="works-videos" class="py-24 px-5 md:px-16 bg-base-200/30">
+    <!-- 3. Videos Sections -->
+    <div id="video-sections-container" class="bg-base-200/30">
+      
+      <!-- Section: Ads -->
+      <section id="section-ads" class="py-16 px-5 md:px-16 pt-24">
+        <div class="mb-10 flex items-center gap-4">
+          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-primary/10 px-3 py-1 rounded-full">01</span>
+          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.ads.title">Ad Production</h2>
+        </div>
+        <div id="grid-ads" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </section>
 
-      <!-- Header -->
-      <div class="mb-14">
-        <p class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3" data-i18n="works.videos.label"></p>
-        <h2 class="text-3xl md:text-5xl font-black uppercase" data-i18n="works.videos.title"></h2>
-      </div>
+      <!-- Section: Films -->
+      <section id="section-films" class="py-16 px-5 md:px-16 border-t border-base-content/5">
+        <div class="mb-10 flex items-center gap-4">
+          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-primary/10 px-3 py-1 rounded-full">02</span>
+          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.films.title">Short Films</h2>
+        </div>
+        <div id="grid-films" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </section>
 
-      <!-- Videos Grid -->
-      <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Injected by works.js -->
-      </div>
+      <!-- Section: Reels -->
+      <section id="section-reels" class="py-16 px-5 md:px-16 border-t border-base-content/5">
+        <div class="mb-10 flex items-center gap-4">
+          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-primary/10 px-3 py-1 rounded-full">03</span>
+          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.reels.title">Reels & Clips</h2>
+        </div>
+        <div id="grid-reels" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </section>
 
-    </section>
+      <!-- Section: Cinema -->
+      <section id="section-cinema" class="py-16 px-5 md:px-16 border-t border-base-content/5">
+        <div class="mb-10 flex items-center gap-4">
+          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.4em] bg-primary/10 px-3 py-1 rounded-full">04</span>
+          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.cinema.title">Cinematic Production</h2>
+        </div>
+        <div id="grid-cinema" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </section>
+
+    </div>
   </main>
 
   <script src="src/js/theme.js"></script>

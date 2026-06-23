@@ -194,9 +194,9 @@
 /* CREATIVE Theme Switcher: THEME ORBS */
 .theme-orb-rail {
     position: absolute;
-    top: 50%;
-    right: calc(100% + 15px);
-    transform: translateY(-50%) translateX(20px);
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-15px);
     display: flex;
     gap: 12px;
     padding: 8px 15px;
@@ -214,7 +214,7 @@
 .theme-orb-rail.show {
     opacity: 1;
     visibility: visible;
-    transform: translateY(-50%) translateX(0);
+    transform: translateX(-50%) translateY(0);
 }
 
 .theme-orb {
@@ -256,16 +256,6 @@
 @keyframes orbPulse {
     from { opacity: 0.5; transform: translate(-50%, -50%) scale(0.8); }
     to { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
-}
-
-[dir="rtl"] .theme-orb-rail {
-    right: auto;
-    left: calc(100% + 15px);
-    transform: translateY(-50%) translateX(-20px);
-}
-
-[dir="rtl"] .theme-orb-rail.show {
-    transform: translateY(-50%) translateX(0);
 }
 
 /* Mobile responsive fixes */
@@ -344,3 +334,12 @@
 [dir="rtl"] .nav-controls { flex-direction: row-reverse; }
 [dir="rtl"] .mobile-menu-panel { right: auto; left: 0; transform: translateX(-100%); }
 [dir="rtl"] .mobile-menu-overlay.active .mobile-menu-panel { transform: translateX(0); }
+
+@media (max-width: 480px) {
+    .navbar-container { padding: 0 12px; }
+    .logo-text { font-size: 0.85rem; }
+    .logo-img { height: 26px; }
+    .nav-controls { gap: 8px; }
+    .control-btn { width: 32px; height: 32px; font-size: 0.8rem; }
+    .lang-btn { font-size: 0.7rem; }
+}

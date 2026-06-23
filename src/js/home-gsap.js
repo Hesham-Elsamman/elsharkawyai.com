@@ -131,8 +131,8 @@ function initHomeAnimations() {
         });
     }
 
-    gsap.set(".hero-cta-group", { autoAlpha: 0, y: 25 });
-
+    // --- Hero CTA Buttons: Same cinematic style as title chars ---
+    // Keep hidden initially via fromTo (explicit start state)
     heroTl.fromTo(".hero-subtitle", {
         autoAlpha: 0,
         y: 30,
@@ -144,13 +144,21 @@ function initHomeAnimations() {
         duration: 1.5,
     }, "-=0.3");
 
-    heroTl.to(".hero-cta-group", {
-        autoAlpha: 1,
+    // Buttons animate in sync with the end of the title, same style
+    heroTl.fromTo(".hero-cta-group", {
+        y: 60,
+        autoAlpha: 0,
+        filter: "blur(8px)",
+        scale: 0.95
+    }, {
         y: 0,
-        duration: 0.9,
-        ease: "expo.out",
-        clearProps: "transform"
-    }, "-=0.6");
+        autoAlpha: 1,
+        filter: "blur(0px)",
+        scale: 1,
+        duration: 1,
+        ease: "power4.out",
+        clearProps: "filter,scale"
+    }, "-=1.1"); // Starts just before subtitle finishes - fully synchronized
 
     // --- Scroll Reveal Animations ---
     

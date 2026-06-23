@@ -21,6 +21,13 @@
   overflow: hidden;
 }
 
+/* Initially hide hero elements for GSAP animation to prevent FOUC */
+.works-hero-title, 
+.works-hero-subtitle {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* 1. Spotlight Hero (Bottom Layer) - DEPRECATED, replaced with #works-hero */
 /*
 #spotlight-hero {

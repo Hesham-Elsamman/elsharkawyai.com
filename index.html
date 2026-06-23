@@ -23,17 +23,29 @@
   <meta property="og:url" content="https://adham-sharkawy.com" />
   <meta name="robots" content="index, follow" />
 
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn-uicons.flaticon.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
   <link rel="shortcut icon" href="src/assets/imgs/logo-blue.png" type="image/x-icon" />
+  
+  <!-- Consolidated Flaticon requests if possible, otherwise preconnect helps -->
   <link rel="stylesheet"
     href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css" />
   <link rel="stylesheet"
     href="https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css" />
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css" />
   <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css" />
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cairo:wght@200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Outfit:wght@300;400;700&display=swap"
     rel="stylesheet" />
+    
+  <!-- GSAP must remain sync for preloader -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="src/js/preloader.js"></script>
@@ -56,7 +68,7 @@
         <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4 hero-title" data-i18n="hero.title">
         </h1>
 
-        <div class="hero-cta-group flex flex-col sm:flex-row gap-4 justify-center items-center mt-10">
+        <div class="hero-cta-group flex flex-row flex-wrap gap-4 justify-center items-center mt-8">
 
           <a href="works.html" class="wicked-lionfish-btn wicked-lionfish-btn-inverse" data-i18n="hero.btn_works">
             <span data-i18n="hero.btn_works"></span>
@@ -304,19 +316,19 @@
     </section>
   </main>
 
-  <script src="src/js/theme.js"></script>
-  <script src="src/js/lang.js"></script>
-  <script src="src/js/navbar.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="src/js/text.js"></script>
-  <script src="src/js/scroll.js"></script>
-  <script src="src/js/cursor.js"></script>
-  <script src="src/js/lightning.js"></script>
-  <script src="src/js/home-gsap.js"></script>
-  <script src="src/js/electric-border.js"></script>
+  <script defer src="src/js/theme.js"></script>
+  <script defer src="src/js/lang.js"></script>
+  <script defer src="src/js/navbar.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script defer src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="src/js/text.js"></script>
+  <script defer src="src/js/scroll.js"></script>
+  <script defer src="src/js/cursor.js"></script>
+  <script defer src="src/js/lightning.js"></script>
+  <script defer src="src/js/home-gsap.js"></script>
+  <script defer src="src/js/electric-border.js"></script>
 
-  <script src="node_modules/flyonui/flyonui.js"></script>
+  <script defer src="node_modules/flyonui/flyonui.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof Swiper !== "undefined") {
