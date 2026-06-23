@@ -76,7 +76,7 @@ class Navbar {
                     <ul class="nav-links nav-desktop-only">
                         <li><a href="index.html" class="nav-link-item" data-page="index">${isAr ? 'الرئيسية' : 'Home'}</a></li>
                         <li><a href="works.html" class="nav-link-item" data-page="works">${isAr ? 'أعمالي' : 'Works'}</a></li>
-                        <li><a href="skills.html" class="nav-link-item" data-page="skills">${isAr ? 'مهاراتي' : 'Skills'}</a></li>
+                        <!-- <li><a href="skills.html" class="nav-link-item" data-page="skills">${isAr ? 'مهاراتي' : 'Skills'}</a></li> -->
                         <li><a href="contact.html" class="nav-link-item" data-page="contact">${isAr ? 'تواصل معي' : 'Contact'}</a></li>
                     </ul>
 

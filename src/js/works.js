@@ -8,31 +8,112 @@
 const WORKS_CONFIG = {
   ads: [
     {
-      title_en: "Commercial Placeholder 1",
-      title_ar: "إعلان تجاري 1",
-      desc_en: "Placeholder description for ad production.",
-      desc_ar: "نص افتراضي لوصف الإعلان التجاري.",
-      ytLink: "https://www.youtube.com/embed/BWygxBGZJ9g",
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/6nwjtfsJqqI",
       cat_en: "Ad Production",
       cat_ar: "إنتاج إعلانات"
     },
     {
-      title_en: "Commercial Placeholder 2",
-      title_ar: "إعلان تجاري 2",
-      desc_en: "Placeholder description for ad production.",
-      desc_ar: "نص افتراضي لوصف الإعلان التجاري.",
-      ytLink: "https://www.youtube.com/embed/BWygxBGZJ9g",
+      title_en: "AD for Dream City Perfume",
+      title_ar: "إعلان لعطر دريم سيتي",
+      desc_en: "A premium advertisement for Dream City perfume reflecting elegance and charm",
+      desc_ar: "إعلان مميز لعطر دريم سيتي يعكس الأناقة والجاذبية",
+      ytLink: "https://www.youtube.com/embed/-amrEpPsWkI",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "M2K Hair Product Ad",
+      title_ar: "إعلان M2K منتج شعر",
+      desc_en: "An attractive advertisement for M2K hair product",
+      desc_ar: "إعلان جذاب لمنتج الشعر M2K",
+      ytLink: "https://www.youtube.com/embed/mjYvXkYhPq4",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "YalaBook Advertisement",
+      title_ar: "إعلان لـ YalaBook",
+      desc_en: "Promotional advertisement for YalaBook services",
+      desc_ar: "إعلان ترويجي لخدمات YalaBook",
+      ytLink: "https://www.youtube.com/embed/XOf3p_xOB-0",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Commercial Advertisement",
+      title_ar: "إعلان تجاري",
+      desc_en: "Professional commercial advertisement",
+      desc_ar: "إعلان تجاري احترافي",
+      ytLink: "https://www.youtube.com/embed/VG6PfDQ0LDo",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/aq2I41fZvfE",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/yxrUNq5vjeE",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/80nZhXA625U",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/uah-KtVx_Ek",
       cat_en: "Ad Production",
       cat_ar: "إنتاج إعلانات"
     }
   ],
   films: [
     {
-      title_en: "Short Film Placeholder",
-      title_ar: "فيلم قصير 1",
-      desc_en: "Placeholder description for short films.",
-      desc_ar: "نص افتراضي لوصف الفيلم القصير.",
-      ytLink: "https://www.youtube.com/embed/BWygxBGZJ9g",
+      title_en: "AI Generated Short Film",
+      title_ar: "فيلم قصير صُنع بالذكاء الاصطناعي",
+      desc_en: "...where ideas turn into vibrant scenes",
+      desc_ar: "…حيث تتحول الأفكار إلى مشاهد نابضة بالحياة",
+      ytLink: "https://www.youtube.com/embed/HveAleW0aGs",
+      cat_en: "Short Film",
+      cat_ar: "فيلم قصير"
+    },
+    {
+      title_en: "The Pharaoh’s Arena",
+      title_ar: "أول تجربة سينمائية بالذكاء الاصطناعي",
+      desc_en: "A mysterious journey starting inside an ancient pharaonic temple... and ending in a fighting world beyond time...",
+      desc_ar: "رحلة غامضة تبدأ من داخل معبد فرعوني قديم… وتنتهي داخل عالم قتال خارج حدود الزمن..",
+      ytLink: "https://www.youtube.com/embed/-YCRkHaljSs",
+      cat_en: "Short Film",
+      cat_ar: "فيلم قصير"
+    },
+    {
+      title_en: "The Pharaoh's Arena - Episode 2",
+      title_ar: "الحلقة التانية من حلبه الفرعون",
+      desc_en: "Continuation of the Pharaoh's Arena events in a stunning visual experience",
+      desc_ar: "تكملة لأحداث حلبة الفرعون في تجربة بصرية مبهرة",
+      ytLink: "https://www.youtube.com/embed/9YGxkuWHzrk",
       cat_en: "Short Film",
       cat_ar: "فيلم قصير"
     }
@@ -233,6 +314,36 @@ function setupScrollAnimations() {
       }
     }
   );
+
+  // Animate Section Headers (Typewriter style)
+  gsap.utils.toArray("section .mb-10").forEach(container => {
+    const title = container.querySelector('h2');
+    
+    // Delay text split to ensure lang.js translation completes
+    setTimeout(() => {
+      const originalText = title.textContent;
+      title.textContent = "";
+      
+      const chars = originalText.split("").map(char => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.opacity = "0";
+        title.appendChild(span);
+        return span;
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      tl.to(chars, { opacity: 1, duration: 0.01, stagger: 0.03, ease: "none" });
+        
+    }, 600);
+  });
 }
 
 // ─── VIDEO GRID RENDER ────────────────────────────────────────────────────────
@@ -247,37 +358,45 @@ function renderVideos() {
     if (!grid) return;
 
     grid.innerHTML = WORKS_CONFIG[cat].map((p, i) => `
-      <div class="video-card group" style="opacity:0;transform:translateY(40px)">
-        <div class="relative rounded-2xl overflow-hidden bg-base-200 shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2" style="aspect-ratio:16/9">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none"></div>
-          <iframe
-            src="${p.ytLink}?rel=0&modestbranding=1"
-            title="${isAr ? p.title_ar : p.title_en}"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            class="w-full h-full transform transition-transform duration-500 group-hover:scale-105"
-            loading="lazy">
-          </iframe>
-          <div class="absolute bottom-0 left-0 right-0 p-4 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none">
-            <span class="text-primary text-[10px] font-bold uppercase tracking-[0.3em] bg-black/50 px-2 py-1 rounded backdrop-blur-sm">${isAr ? p.cat_ar : p.cat_en}</span>
+      <div class="video-card-wrapper" style="opacity:0;transform:translateY(50px)">
+        <div class="video-card group relative p-3 md:p-4 rounded-[28px] bg-base-200/40 border border-base-content/5 transition-all duration-500 hover:bg-base-200 hover:-translate-y-2 cursor-pointer">
+          
+          <!-- Elegant Moving Borders (Top & Bottom) -->
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
+          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
+
+          <!-- Video Container -->
+          <div class="relative w-full rounded-2xl overflow-hidden bg-black shadow-inner" style="aspect-ratio:16/9">
+            
+            <iframe
+              data-src="${p.ytLink}?rel=0&modestbranding=1&autoplay=1"
+              src="${p.ytLink}?rel=0&modestbranding=1"
+              title="Video"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="w-full h-full bg-black pointer-events-none"
+              loading="lazy">
+            </iframe>
+
+            <div class="absolute inset-0 z-10 bg-transparent"
+                 onclick="const iframe = this.previousElementSibling; iframe.src = iframe.getAttribute('data-src'); iframe.classList.remove('pointer-events-none'); this.style.display='none';">
+            </div>
+
           </div>
-        </div>
-        <div class="mt-4 px-1">
-          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.3em]">${isAr ? p.cat_ar : p.cat_en}</span>
-          <h3 class="text-lg font-black mt-1 group-hover:text-primary transition-colors duration-300">${isAr ? p.title_ar : p.title_en}</h3>
-          <p class="text-base-content/60 text-sm mt-1 leading-relaxed">${isAr ? p.desc_ar : p.desc_en}</p>
         </div>
       </div>
     `).join('');
-  });
 
-  // GSAP reveal for all video cards together based on scroll
-  gsap.utils.toArray(".video-card").forEach(card => {
-    gsap.to(card, {
-      opacity: 1, y: 0, duration: 0.9, ease: "power3.out",
+    // GSAP reveal for each grid explicitly to guarantee staggering
+    gsap.to(grid.querySelectorAll('.video-card-wrapper'), {
+      opacity: 1, 
+      y: 0, 
+      duration: 0.8, 
+      stagger: 0.3, // 0.3s solid delay between each card
+      ease: "power3.out",
       scrollTrigger: {
-        trigger: card,
+        trigger: grid,
         start: "top 85%",
         toggleActions: "play none none reverse"
       }

@@ -80,11 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
             align-items: center;
         }
         .cursor-media #cursor-outline::after {
-            content: "VIEW";
-            color: #000;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 1px;
+            content: "";
+            width: 22px;
+            height: 22px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-left: 4px; /* centers the visual weight of the triangle */
             mix-blend-mode: normal;
         }
 
@@ -156,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
         });
 
-        const medias = document.querySelectorAll('.vid-card, .img-card, .media-card');
+        const medias = document.querySelectorAll('.video-card, .vid-card, .img-card, .media-card');
         medias.forEach(el => {
             if (el.dataset.cursorMediaBound) return;
             el.dataset.cursorMediaBound = "true";
