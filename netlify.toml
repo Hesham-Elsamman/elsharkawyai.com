@@ -2,6 +2,9 @@
   command = "npm install && npm run build"
   publish = "."
 
+[build.environment]
+  NODE_VERSION = "18"
+
 [[headers]]
   for = "/src/css/*"
   [headers.values]
