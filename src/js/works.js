@@ -87,6 +87,33 @@ const WORKS_CONFIG = {
       ytLink: "https://www.youtube.com/embed/uah-KtVx_Ek",
       cat_en: "Ad Production",
       cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/Y9-4i4GI0Gs",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/35zbuBP3n4Q",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/7o4fxxEsKC4",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
     }
   ],
   films: [
@@ -120,22 +147,94 @@ const WORKS_CONFIG = {
   ],
   reels: [
     {
-      title_en: "Reel Placeholder 1",
-      title_ar: "ريل افتراضي 1",
-      desc_en: "Placeholder description for reels.",
-      desc_ar: "نص افتراضي لوصف الريل.",
-      ytLink: "https://www.youtube.com/embed/BWygxBGZJ9g",
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/WGDPb6KOHLM",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/JqgmRcttmnE",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/TuU_gcTBlH4",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/ShAo4kqdaHg",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/uq9KRSbQyD0",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/XSWrMbPmUeM",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/4DFsnmcr8TQ",
+      cat_en: "Reels",
+      cat_ar: "ريلز"
+    },
+    {
+      title_en: "Reel",
+      title_ar: "ريل",
+      desc_en: "Short video content",
+      desc_ar: "محتوى فيديو قصير",
+      ytLink: "https://www.youtube.com/embed/hBvx9Sctb6E",
       cat_en: "Reels",
       cat_ar: "ريلز"
     }
   ],
   cinema: [
     {
-      title_en: "Cinematic Placeholder",
-      title_ar: "إنتاج سينمائي 1",
-      desc_en: "Placeholder description for cinematic production.",
-      desc_ar: "نص افتراضي لوصف الإنتاج السينمائي.",
-      ytLink: "https://www.youtube.com/embed/BWygxBGZJ9g",
+      title_en: "Cinematic Production",
+      title_ar: "إنتاج سينمائي",
+      desc_en: "Cinematic video content.",
+      desc_ar: "محتوى فيديو سينمائي.",
+      ytLink: "https://www.youtube.com/embed/IqYxRfP0XyY",
+      cat_en: "Cinematic",
+      cat_ar: "سينمائي"
+    },
+    {
+      title_en: "Cinematic Production",
+      title_ar: "إنتاج سينمائي",
+      desc_en: "Cinematic video content.",
+      desc_ar: "محتوى فيديو سينمائي.",
+      ytLink: "https://www.youtube.com/embed/Y-aAAO2D1go",
       cat_en: "Cinematic",
       cat_ar: "سينمائي"
     }
