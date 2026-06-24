@@ -66,7 +66,7 @@ class Navbar {
                 <div class="navbar-content" dir="${isAr ? 'rtl' : 'ltr'}">
                     <!-- Premium Logo Section -->
                     <div class="nav-logo">
-                        <a href="index.html" class="logo-link">
+                        <a href="/" class="logo-link">
                             <img src="${DARK_THEMES.find(t => t.id === currentTheme)?.logo || 'src/assets/imgs/logo-blue.png'}" alt="Sharkawy AI" class="logo-img">
                             <span class="logo-text">SHARKAWY <span class="highlight">AI</span></span>
                         </a>
@@ -74,7 +74,7 @@ class Navbar {
 
                     <!-- Desktop Navigation Links -->
                     <ul class="nav-links nav-desktop-only">
-                        <li><a href="index.html" class="nav-link-item" data-page="index">${isAr ? 'الرئيسية' : 'Home'}</a></li>
+                        <li><a href="/" class="nav-link-item" data-page="index">${isAr ? 'الرئيسية' : 'Home'}</a></li>
                         <li><a href="works.html" class="nav-link-item" data-page="works">${isAr ? 'أعمالي' : 'Works'}</a></li>
                         <!-- <li><a href="skills.html" class="nav-link-item" data-page="skills">${isAr ? 'مهاراتي' : 'Skills'}</a></li> -->
                         <li><a href="contact.html" class="nav-link-item" data-page="contact">${isAr ? 'تواصل معي' : 'Contact'}</a></li>
@@ -122,7 +122,7 @@ class Navbar {
                 <div class="mobile-menu-panel">
                     <button class="close-mobile-menu" id="closeMobileMenu">&times;</button>
                     <ul class="mobile-links">
-                        <li><a href="index.html" class="nav-link-item" data-page="index">${isAr ? 'الرئيسية' : 'Home'}</a></li>
+                        <li><a href="/" class="nav-link-item" data-page="index">${isAr ? 'الرئيسية' : 'Home'}</a></li>
                         <li><a href="works.html" class="nav-link-item" data-page="works">${isAr ? 'أعمالي' : 'Works'}</a></li>
                         <li><a href="skills.html" class="nav-link-item" data-page="skills">${isAr ? 'مهاراتي' : 'Skills'}</a></li>
                         <li><a href="contact.html" class="nav-link-item" data-page="contact">${isAr ? 'تواصل معي' : 'Contact'}</a></li>
