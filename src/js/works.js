@@ -168,7 +168,7 @@ const WORKS_CONFIG = {
       title_en: "Reel",
       title_ar: "ريل",
       desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
+      desc_ar: " قصير",
       ytLink: "https://www.youtube.com/embed/4DFsnmcr8TQ",
       cat_en: "Reels",
       cat_ar: "ريلز"
@@ -177,9 +177,9 @@ const WORKS_CONFIG = {
   cinema: [
     {
       title_en: "Cinematic Production",
-      title_ar: "إنتاج سينمائي",
+      title_ar: " سينمائي",
       desc_en: "Cinematic video content.",
-      desc_ar: "محتوى فيديو سينمائي.",
+      desc_ar: "  سينمائي.",
       ytLink: "https://www.youtube.com/embed/IqYxRfP0XyY",
       cat_en: "Cinematic",
       cat_ar: "سينمائي"
@@ -188,7 +188,7 @@ const WORKS_CONFIG = {
       title_en: "Cinematic Production",
       title_ar: "إنتاج سينمائي",
       desc_en: "Cinematic video content.",
-      desc_ar: "محتوى فيديو سينمائي.",
+      desc_ar: " سينمائي.",
       ytLink: "https://www.youtube.com/embed/Y-aAAO2D1go",
       cat_en: "Cinematic",
       cat_ar: "سينمائي"
