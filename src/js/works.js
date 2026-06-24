@@ -125,24 +125,6 @@ const WORKS_CONFIG = {
       ytLink: "https://www.youtube.com/embed/HveAleW0aGs",
       cat_en: "Short Film",
       cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "The Pharaoh’s Arena",
-      title_ar: "أول تجربة سينمائية بالذكاء الاصطناعي",
-      desc_en: "A mysterious journey starting inside an ancient pharaonic temple... and ending in a fighting world beyond time...",
-      desc_ar: "رحلة غامضة تبدأ من داخل معبد فرعوني قديم… وتنتهي داخل عالم قتال خارج حدود الزمن..",
-      ytLink: "https://www.youtube.com/embed/-YCRkHaljSs",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "The Pharaoh's Arena - Episode 2",
-      title_ar: "الحلقة التانية من حلبه الفرعون",
-      desc_en: "Continuation of the Pharaoh's Arena events in a stunning visual experience",
-      desc_ar: "تكملة لأحداث حلبة الفرعون في تجربة بصرية مبهرة",
-      ytLink: "https://www.youtube.com/embed/9YGxkuWHzrk",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
     }
   ],
   reels: [
@@ -152,24 +134,6 @@ const WORKS_CONFIG = {
       desc_en: "Short video content",
       desc_ar: "محتوى فيديو قصير",
       ytLink: "https://www.youtube.com/embed/WGDPb6KOHLM",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/JqgmRcttmnE",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/TuU_gcTBlH4",
       cat_en: "Reels",
       cat_ar: "ريلز"
     },
@@ -209,15 +173,6 @@ const WORKS_CONFIG = {
       cat_en: "Reels",
       cat_ar: "ريلز"
     },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/hBvx9Sctb6E",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    }
   ],
   cinema: [
     {
