@@ -26,6 +26,8 @@
     <link href="src/css/output.css" rel="stylesheet" />
     <link href="src/css/style.css" rel="stylesheet" />
     <link href="src/css/navbar.css" rel="stylesheet" />
+    <link href="src/css/footer.css" rel="stylesheet" />
+    <link href="src/css/contact.css" rel="stylesheet" />
     <title>Sharkawy Ai - Contact</title>
   </head>
   <body data-page="contact" class="bg-base-100 text-base-content hide-scrollbar">
@@ -34,156 +36,103 @@
 
 
     <main id="app">
-      <section id="contact_me" class="px-5 md:px-20 py-5 md:pt-15 md:pb-10 overflow-scroll md:overflow-hidden bg-base-100 flex flex-col">
-        
-        <h1
+      <!-- 1. Hero Section -->
+      <section class="contact-hero text-center px-5">
+        <h1 class="contact-title" data-i18n="contact.hero.title">LET'S CREATE<br><span class="text-primary">SOMETHING AMAZING</span></h1>
+        <p class="contact-subtitle mt-4" data-i18n="contact.hero.subtitle">Join our success — you're the next client!</p>
+      </section>
+
+      <!-- 2. Bento Grid Section -->
+      <section class="px-5">
+        <div class="bento-grid">
           
-          class="hero-title text-lg md:text-2xl lg:text-4xl capitalize select-none mb-10!"
-        >
-          Contact Me
-        </h1>
+          <!-- Connect / Email Card -->
+          <div class="bento-card bento-email">
+            <span class="card-label" data-i18n="contact.bento.email.label">Drop a line</span>
+            <div class="email-row">
+              <a href="mailto:asharkawy267@gmail.com" class="email-address-link">asharkawy267@gmail.com</a>
+              <button id="copyEmailBtn" class="copy-btn">
+                <i class="fi fi-rr-copy"></i>
+                <span class="copy-text" data-i18n="contact.bento.email.copy">Copy</span>
+              </button>
+            </div>
+          </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 ms-5">
-          <div class="ps-5!" >
-            <h1 class="text-2xl mb-8 font-bold text-primary">
-              Join our success — you're the next client!
-            </h1>
+          <!-- Social Hub Card -->
+          <div class="bento-card bento-social">
+            <span class="card-label mb-6" data-i18n="contact.bento.social.title">Social Presence</span>
+            <div class="social-links-grid">
+              <a href="http://wa.me/201144820078" target="_blank" class="social-item social-whatsapp">
+                <i class="fi fi-brands-whatsapp"></i>
+                <span>WhatsApp</span>
+              </a>
+              <a href="https://t.me/Qww1ww" target="_blank" class="social-item social-telegram">
+                <i class="fi fi-brands-telegram"></i>
+                <span>Telegram</span>
+              </a>
+              <a href="https://www.instagram.com/adham_shrakawy?igsh=MTRsdWQ2amRmazBhMg%3D%3D&utm_source=qr" target="_blank" class="social-item social-instagram">
+                <i class="fi fi-brands-instagram"></i>
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/share/1Cwpt9PpV3/?mibextid=wwXIfr" target="_blank" class="social-item social-facebook">
+                <i class="fi fi-brands-facebook"></i>
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
 
-            <div class="flex flex-col gap-5 md:ms-5">
-              <div class="flex flex-row gap-3 items-center">
-                <span class="bi bi-telephone-fill text-primary text-2xl"></span>
-                <a
-                  href="tel:+201144820078"
-                  class="text-primary text-sm md:text-lg hover:underline"
-                  >+201144820078</a
-                >
-              </div>
-              <div class="flex flex-row gap-3 items-center">
-                <span class="bi bi-phone-fill text-primary text-2xl"></span>
-                <a
-                  href="tel:+201557913665"
-                  class="text-primary text-sm md:text-lg hover:underline"
-                  >+201557913665</a
-                >
-              </div>
-              <div class="flex flex-row gap-3 items-center">
-                <span class="bi bi-envelope-fill text-primary text-2xl"></span>
-                <a
-                  href="mailto:asharkawy267@gmail.com"
-                  class="text-primary text-sm md:text-lg hover:link-hover"
-                >
-                  asharkawy267@gmail.com
-                </a>
-              </div>
-              <div class="flex flex-row gap-3 items-center">
-                <span class="bi bi-geo-alt-fill text-primary text-2xl"></span>
-                <p class="text-primary text-sm md:text-lg">
-                  Al Gamaliya, Cairo, Egypt
-                </p>
+          <!-- Phone Lines Card -->
+          <div class="bento-card bento-phone">
+            <span class="card-label" data-i18n="contact.bento.phone.title">Direct Lines</span>
+            <div class="phone-lines-wrapper">
+              <a href="tel:+201144820078" class="phone-line" style="text-decoration: none;">
+                <div class="phone-icon"><i class="fi fi-rr-phone-call"></i></div>
+                <div class="phone-details">
+                  <span class="phone-type" data-i18n="contact.bento.phone.label1">Main</span>
+                  <span class="phone-number">+20 114 482 0078</span>
+                </div>
+              </a>
+              <a href="tel:+201557913665" class="phone-line" style="text-decoration: none;">
+                <div class="phone-icon"><i class="fi fi-rr-smartphone"></i></div>
+                <div class="phone-details">
+                  <span class="phone-type" data-i18n="contact.bento.phone.label2">Secondary</span>
+                  <span class="phone-number">+20 155 791 3665</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Location Map Card -->
+          <div class="bento-card bento-map">
+            <div class="map-container">
+              <iframe
+                class="map-frame"
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7460.897811699751!2d31.277681886185295!3d30.0389141304549!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1762936308143!5m2!1sen!2seg"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <div class="map-overlay">
+                <i class="fi fi-rr-marker"></i>
+                <div class="flex flex-col">
+                  <span class="text-xs text-white/50 uppercase tracking-widest" data-i18n="contact.bento.location.title">Based in</span>
+                  <span class="text-sm" data-i18n="contact.bento.location.desc">Al Gamaliya, Cairo, Egypt</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- map -->
-          <div
-            class="h-full! w-full flex justify-center items-center mt-8 md:mt-0"
-            
-          >
-            <iframe
-              class="map-frame w-full h-96 md:h-full rounded-lg"
-              src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d7460.897811699751!2d31.277681886185295!3d30.0389141304549!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1762936308143!5m2!1sen!2seg"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </div>
-
-        <div class="mt-10 mb-20 grow">
-          <div class="grid grid-cols-1 md:grid-cols-4 h-full">
-            <div class="flex justify-center items-center">
-              <a
-                role="banner"
-                class="btn3d"
-                href="http://wa.me/201144820078"
-                target="_blank"
-              >
-                <i
-                  class="bi bi-whatsapp"
-                  style="font-size: 2em; color: #25d366"
-                ></i>
-                WhatsApp
-              </a>
-            </div>
-
-            <div class="flex justify-center items-center">
-              <a
-                role="banner"
-                class="btn3d"
-                href="https://t.me/Qww1ww"
-                target="_blank"
-              >
-                <i
-                  class="bi bi-telegram"
-                  style="font-size: 2em; color: #0088cc"
-                ></i>
-                Telegram
-              </a>
-            </div>
-            <div class="flex justify-center items-center">
-              <a
-                role="banner"
-                class="btn3d"
-                href="https://www.instagram.com/adham_shrakawy?igsh=MTRsdWQ2amRmazBhMg%3D%3D&utm_source=qr"
-                target="_blank"
-              >
-                <i
-                  class="bi bi-instagram"
-                  style="font-size: 2em; color: #e1306c"
-                ></i>
-                Instagram
-              </a>
-            </div>
-            <div class="flex justify-center items-center">
-              <a
-                role="banner"
-                class="btn3d"
-                href="https://www.facebook.com/share/1Cwpt9PpV3/?mibextid=wwXIfr"
-                target="_blank"
-              >
-                <i
-                  class="bi bi-facebook"
-                  style="font-size: 2em; color: #3b5998"
-                ></i>
-                facebook
-              </a>
-            </div>
-          </div>
-        </div>
-        <div
-          class="flex flex-col items-center md:flex-row md:justify-between md:items-center gap-4"
-        >
-          <p class="text-sm text-center text-primary">
-            © 2024 Adham Elsharkawy. All rights reserved.
-          </p>
-          <p>
-            Created By
-            <a
-              class="group cursor-pointer select-none"
-              href="https://github.com/Hesham-Elsamman"
-            >
-              HESHAM.<span class="font-bold group-hover:text-primary">DEV</span>
-            </a>
-          </p>
-        </div>
-      
       </section>
     </main>
+
+    <footer id="main-footer"></footer>
 
     <script src="src/js/theme.js"></script>
     <script src="src/js/lang.js"></script>
     <script src="src/js/navbar.js"></script>
+    <script src="src/js/footer.js"></script>
+    <script src="src/js/contact.js"></script>
     
     <script src="src/js/text.js"></script>
     <script src="src/js/cursor.js"></script>

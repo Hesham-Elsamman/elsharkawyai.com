@@ -1,0 +1,562 @@
+/* =============================================
+   CONTACT PAGE - FUTURISTIC 2060 EDITION
+   ============================================= */
+
+/* ─── Animated Background Noise / Grid ─── */
+.contact-page-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.contact-page-bg .grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(39, 172, 244, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(39, 172, 244, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridShift 20s linear infinite;
+}
+
+@keyframes gridShift {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(60px); }
+}
+
+.contact-page-bg .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.15;
+    animation: orbFloat 8s ease-in-out infinite;
+}
+
+.contact-page-bg .glow-orb-1 {
+    width: 600px;
+    height: 600px;
+    background: var(--color-primary, #27acf4);
+    top: -200px;
+    left: -200px;
+    animation-delay: 0s;
+}
+
+.contact-page-bg .glow-orb-2 {
+    width: 400px;
+    height: 400px;
+    background: #8b5cf6;
+    bottom: 0;
+    right: -100px;
+    animation-delay: -4s;
+}
+
+@keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -30px) scale(1.05); }
+    66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+/* ─── Hero Section ─── */
+.contact-hero {
+    position: relative;
+    padding-top: 9rem;
+    padding-bottom: 3rem;
+    z-index: 10;
+}
+
+.contact-title {
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1.1;
+    font-family: 'Archivo Black', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-primary, #27acf4) 50%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+    animation: titleGradient 4s linear infinite;
+}
+
+@keyframes titleGradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+}
+
+.contact-subtitle {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.02em;
+}
+
+/* ─── Bento Grid System ─── */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 4rem;
+    z-index: 10;
+    position: relative;
+}
+
+@media (min-width: 992px) {
+    .bento-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 220px 220px;
+        grid-template-areas:
+            "email email phone"
+            "social social map";
+    }
+
+    .bento-email  { grid-area: email; }
+    .bento-social { grid-area: social; }
+    .bento-phone  { grid-area: phone; }
+    .bento-map    { grid-area: map; }
+}
+
+/* ─── Glass Card ─── */
+.bento-card {
+    position: relative;
+    background: rgba(10, 14, 23, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 28px;
+    padding: 2rem 2.5rem;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+                box-shadow 0.5s ease,
+                border-color 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 3D tilt perspective setup */
+    transform-style: preserve-3d;
+}
+
+/* Animated shimmer border */
+.bento-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 28px;
+    padding: 1px;
+    background: linear-gradient(
+        130deg,
+        transparent 0%,
+        rgba(39, 172, 244, 0) 40%,
+        rgba(39, 172, 244, 0.6) 50%,
+        rgba(139, 92, 246, 0.6) 60%,
+        transparent 100%
+    );
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    animation: shimmerBorder 3s linear infinite paused;
+}
+
+.bento-card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+}
+
+@keyframes shimmerBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Inner glow on hover */
+.bento-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(39, 172, 244, 0.12) 0%,
+        transparent 60%
+    );
+}
+
+.bento-card:hover::after {
+    opacity: 1;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(39, 172, 244, 0.15),
+        0 0 40px rgba(39, 172, 244, 0.08);
+    border-color: rgba(39, 172, 244, 0.2);
+}
+
+/* Spotlight effect label */
+.card-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-primary, #27acf4);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.card-label::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-primary, #27acf4);
+    box-shadow: 0 0 8px var(--color-primary, #27acf4);
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+/* ─── Email Card ─── */
+
+/* Horizontal row: email link + copy button side by side */
+.email-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.email-address-link {
+    font-size: clamp(0.95rem, 1.8vw, 1.4rem);
+    font-weight: 900;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 10;
+    display: inline-block;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Animated underline that follows the cursor */
+.email-address-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary, #27acf4), #8b5cf6);
+    transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.email-address-link:hover {
+    color: var(--color-primary, #27acf4);
+}
+
+.email-address-link:hover::after {
+    width: 100%;
+}
+
+/* Floating tech decoration on email card */
+.bento-email .tech-ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(39, 172, 244, 0.1);
+    top: -60px;
+    right: -60px;
+    animation: ringRotate 12s linear infinite;
+}
+
+.bento-email .tech-ring::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary, #27acf4);
+    border-radius: 50%;
+    top: 50%;
+    left: -4px;
+    box-shadow: 0 0 10px var(--color-primary, #27acf4);
+}
+
+@keyframes ringRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.copy-btn {
+    align-self: flex-start;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    background: rgba(39, 172, 244, 0.08);
+    border: 1px solid rgba(39, 172, 244, 0.25);
+    color: var(--color-primary, #27acf4);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.copy-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-primary, #27acf4), #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: 100px;
+}
+
+.copy-btn:hover::before { opacity: 1; }
+.copy-btn:hover { color: #fff; border-color: transparent; box-shadow: 0 0 30px rgba(39, 172, 244, 0.4); }
+.copy-btn > * { position: relative; z-index: 1; }
+
+/* ─── Phone Card ─── */
+
+/* Phone card will fall back to default vertical stack to fit 1 column */
+
+.phone-line {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.phone-line:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.phone-line:hover {
+    transform: translateX(4px);
+}
+
+.phone-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(39, 172, 244, 0.08);
+    border: 1px solid rgba(39, 172, 244, 0.15);
+    color: var(--color-primary, #27acf4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.phone-line:hover .phone-icon {
+    background: rgba(39, 172, 244, 0.15);
+    box-shadow: 0 0 20px rgba(39, 172, 244, 0.2);
+    transform: scale(1.1);
+}
+
+.phone-details { display: flex; flex-direction: column; }
+
+.phone-type {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.phone-number {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+.phone-number:hover { color: var(--color-primary, #27acf4); }
+
+/* ─── Social Card ─── */
+.bento-social {
+    padding: 2rem;
+}
+
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    flex: 1;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 991px) {
+    .social-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    padding: 1.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    text-decoration: none;
+    color: rgba(255,255,255,0.5);
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.45s ease;
+    border-radius: 20px;
+}
+
+.social-whatsapp::before { background: radial-gradient(circle at center, rgba(37, 211, 102, 0.15), transparent 70%); }
+.social-telegram::before { background: radial-gradient(circle at center, rgba(0, 136, 204, 0.15), transparent 70%); }
+.social-instagram::before { background: radial-gradient(circle at center, rgba(225, 48, 108, 0.15), transparent 70%); }
+.social-facebook::before { background: radial-gradient(circle at center, rgba(66, 103, 178, 0.15), transparent 70%); }
+
+.social-item span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 1;
+}
+
+.social-item i {
+    font-size: 2rem;
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.social-item:hover {
+    transform: translateY(-6px) scale(1.03);
+    color: #fff;
+}
+
+.social-item:hover::before { opacity: 1; }
+.social-item:hover i { transform: scale(1.25) rotate(-5deg); }
+
+.social-whatsapp:hover { border-color: #25d366; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.2), 0 0 0 1px rgba(37, 211, 102, 0.3); color: #25d366; }
+.social-telegram:hover { border-color: #0088cc; box-shadow: 0 10px 30px rgba(0, 136, 204, 0.2), 0 0 0 1px rgba(0, 136, 204, 0.3); color: #0088cc; }
+.social-instagram:hover { border-color: #e1306c; box-shadow: 0 10px 30px rgba(225, 48, 108, 0.2), 0 0 0 1px rgba(225, 48, 108, 0.3); color: #e1306c; }
+.social-facebook:hover { border-color: #4267B2; box-shadow: 0 10px 30px rgba(66, 103, 178, 0.2), 0 0 0 1px rgba(66, 103, 178, 0.3); color: #4267B2; }
+
+/* ─── Map Card ─── */
+.bento-map {
+    padding: 0;
+    min-height: 200px;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(100%) brightness(0.6) contrast(1.1);
+    transition: filter 0.6s ease, transform 0.6s ease;
+    transform: scale(1.02);
+}
+
+.bento-map:hover .map-frame {
+    filter: grayscale(0%) brightness(0.85) contrast(1);
+    transform: scale(1);
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(16px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.08);
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.4s ease;
+}
+
+.bento-map:hover .map-overlay {
+    border-color: var(--color-primary, #27acf4);
+    box-shadow: 0 0 20px rgba(39, 172, 244, 0.2);
+}
+
+.map-overlay i { color: var(--color-primary, #27acf4); }
+
+/* ─── Inter-card hover magnetic effect ─── */
+.bento-grid:has(.bento-card:hover) .bento-card:not(:hover) {
+    opacity: 0.75;
+    transform: scale(0.98);
+    filter: brightness(0.85);
+}
+
+/* ─── GSAP Initial states ─── */
+.bento-card {
+    opacity: 0;
+}
+
+.contact-title, .contact-subtitle {
+    opacity: 0;
+}

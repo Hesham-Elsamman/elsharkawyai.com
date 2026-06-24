@@ -1,0 +1,120 @@
+/* src/css/footer.css */
+.premium-footer {
+    position: relative;
+    width: 100%;
+    padding: 2.5rem 0;
+    margin-top: 4rem;
+    background: rgba(14, 17, 27, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.premium-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary, #27acf4), transparent);
+    box-shadow: 0 0 20px 2px var(--color-primary, #27acf4);
+    opacity: 0.6;
+}
+
+.footer-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+    z-index: 2;
+}
+
+.footer-made-with {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.dev-link {
+    font-weight: 900;
+    font-family: 'Archivo Black', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    padding: 0 0.2rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dev-link span {
+    color: var(--color-primary, #27acf4);
+    transition: color 0.3s ease;
+}
+
+.dev-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary, #27acf4);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.dev-link:hover {
+    text-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+.dev-link:hover span {
+    color: #fff;
+    text-shadow: 0 0 15px var(--color-primary, #27acf4);
+}
+
+.dev-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.github-icon {
+    font-size: 1.2rem;
+    transition: transform 0.4s ease;
+}
+
+.dev-link:hover .github-icon {
+    transform: rotate(360deg);
+}
+
+/* Background floating particles for footer */
+.footer-particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--color-primary, #27acf4);
+    opacity: 0.3;
+    filter: blur(2px);
+    animation: floatUp 4s infinite linear;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 0.5; }
+    100% { transform: translateY(-60px) scale(0); opacity: 0; }
+}

@@ -1,1 +1,27 @@
-{}
+{
+    "contact": {
+        "hero": {
+            "title": "LET'S CREATE<br><span class='text-primary'>SOMETHING AMAZING</span>",
+            "subtitle": "Join our success — you're the next client!"
+        },
+        "bento": {
+            "email": {
+                "label": "DROP A LINE",
+                "copy": "Copy Email",
+                "copied": "Copied!"
+            },
+            "phone": {
+                "title": "Direct Lines",
+                "label1": "Main",
+                "label2": "Secondary"
+            },
+            "location": {
+                "title": "Based in",
+                "desc": "Al Gamaliya, Cairo, Egypt"
+            },
+            "social": {
+                "title": "Social Presence"
+            }
+        }
+    }
+}
