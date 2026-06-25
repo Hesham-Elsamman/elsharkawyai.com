@@ -204,6 +204,15 @@ const WORKS_CONFIG = {
   cinema: [
     {
       title_en: "Cinematic Production",
+      title_ar: "إنتاج سينمائي",
+      desc_en: "Cinematic video content.",
+      desc_ar: "محتوى فيديو سينمائي.",
+      ytLink: "https://www.youtube.com/embed/JX3ewG_PtM0",
+      cat_en: "Cinematic",
+      cat_ar: "سينمائي"
+    },
+    {
+      title_en: "Cinematic Production",
       title_ar: " سينمائي",
       desc_en: "Cinematic video content.",
       desc_ar: "  سينمائي.",
