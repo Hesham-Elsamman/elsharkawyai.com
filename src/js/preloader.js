@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
             // Instead of display none, we use pointer-events none so doors can be animated back later
             preloader.style.pointerEvents = 'none';
+            window.preloaderDone = true;
             window.dispatchEvent(new CustomEvent('preloaderFinished'));
         }
     });

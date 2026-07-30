@@ -9,7 +9,7 @@ const DARK_THEMES = [
         nameAr: 'فيجوال ستوديو', 
         primary: '#27acf4', 
         bg: '#0e111b',
-        logo: 'src/assets/imgs/logo-blue.png',
+        logo: 'src/assets/imgs/logo.png',
         desc: 'Pro Navy & Cyan' 
     },
     { 
@@ -18,7 +18,7 @@ const DARK_THEMES = [
         nameAr: 'سبوتيفاي', 
         primary: '#00bd67', 
         bg: '#12151d',
-        logo: 'src/assets/imgs/logo-green.png',
+        logo: 'src/assets/imgs/logo.png',
         desc: 'Sleek Green & Black' 
     },
     { 
@@ -27,7 +27,7 @@ const DARK_THEMES = [
         nameAr: 'أسود داكن', 
         primary: '#f5f5f7', 
         bg: '#1d1d20',
-        logo: 'src/assets/imgs/logo-white.png',
+        logo: 'src/assets/imgs/logo.png',
         desc: 'Pure Minimalist' 
     }
 ];
@@ -46,6 +46,7 @@ class Navbar {
         this.attachListeners();
         this.handleScroll();
         this.updateActiveLink();
+        this.triggerEntranceAnimation();
         
         // Listen for external sync
         window.addEventListener('themeChanged', (e) => this.syncThemeUI(e.detail.theme));
@@ -55,6 +56,33 @@ class Navbar {
             this.attachListeners();
             this.updateActiveLink(); // Re-apply active state after re-render
         });
+    }
+
+    triggerEntranceAnimation() {
+        const reveal = () => {
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    this.navElement?.classList.add('navbar-appeared');
+                }, 150);
+            });
+        };
+
+        // Always listen for preloaderFinished event first
+        window.addEventListener('preloaderFinished', reveal, { once: true });
+
+        // If preloader has already finished before navbar initialized
+        if (window.preloaderDone) {
+            reveal();
+        } else {
+            // Check if preloader script exists on page; if not, reveal after delay
+            setTimeout(() => {
+                const hasPreloader = document.getElementById('modern-preloader') || 
+                                     Array.from(document.scripts).some(s => s.src && s.src.includes('preloader.js'));
+                if (!hasPreloader) {
+                    reveal();
+                }
+            }, 500);
+        }
     }
 
     render() {
@@ -67,8 +95,7 @@ class Navbar {
                     <!-- Premium Logo Section -->
                     <div class="nav-logo">
                         <a href="/" class="logo-link">
-                            <img src="${DARK_THEMES.find(t => t.id === currentTheme)?.logo || 'src/assets/imgs/logo-blue.png'}" alt="Sharkawy AI" class="logo-img">
-                            <span class="logo-text">SHARKAWY <span class="highlight">AI</span></span>
+                            <img src="${DARK_THEMES.find(t => t.id === currentTheme)?.logo || 'src/assets/imgs/logo.png'}" alt="Sharkawy AI" class="logo-img">
                         </a>
                     </div>
 
@@ -201,9 +228,9 @@ class Navbar {
             }
 
             if (currentScroll > this.lastScroll && currentScroll > 200) {
-                this.navElement.style.transform = 'translateY(-100%)';
+                this.navElement?.classList.add('nav-hidden');
             } else {
-                this.navElement.style.transform = 'translateY(0)';
+                this.navElement?.classList.remove('nav-hidden');
             }
             this.lastScroll = currentScroll;
         });
