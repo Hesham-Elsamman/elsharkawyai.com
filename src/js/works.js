@@ -12,6 +12,33 @@ const WORKS_CONFIG = {
       title_ar: "إنتاج إعلاني",
       desc_en: "Commercial advertisement",
       desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/wwb7-2r5Y6U",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/6ysfE2nBaZE",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
+      ytLink: "https://www.youtube.com/embed/g5dL52ky-OM",
+      cat_en: "Ad Production",
+      cat_ar: "إنتاج إعلانات"
+    },
+    {
+      title_en: "Ad Production",
+      title_ar: "إنتاج إعلاني",
+      desc_en: "Commercial advertisement",
+      desc_ar: "إعلان تجاري",
       ytLink: "https://www.youtube.com/embed/7vtxojXTrFA",
       cat_en: "Ad Production",
       cat_ar: "إنتاج إعلانات"
@@ -135,6 +162,24 @@ const WORKS_CONFIG = {
     }
   ],
   films: [
+    {
+      title_en: "Film Production",
+      title_ar: "إنتاج فيلم",
+      desc_en: "Short film content",
+      desc_ar: "محتوى فيلم قصير",
+      ytLink: "https://www.youtube.com/embed/tPjJbhx1vnA",
+      cat_en: "Short Film",
+      cat_ar: "فيلم قصير"
+    },
+    {
+      title_en: "Film Production",
+      title_ar: "إنتاج فيلم",
+      desc_en: "Short film content",
+      desc_ar: "محتوى فيلم قصير",
+      ytLink: "https://www.youtube.com/embed/P5sgFwf3usg",
+      cat_en: "Short Film",
+      cat_ar: "فيلم قصير"
+    },
     {
       title_en: "Film Production",
       title_ar: "إنتاج فيلم",
