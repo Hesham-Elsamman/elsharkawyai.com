@@ -185,15 +185,6 @@ const WORKS_CONFIG = {
       title_ar: "إنتاج فيلم",
       desc_en: "Short film content",
       desc_ar: "محتوى فيلم قصير",
-      ytLink: "https://www.youtube.com/embed/9YGxkuWHzrk",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "Film Production",
-      title_ar: "إنتاج فيلم",
-      desc_en: "Short film content",
-      desc_ar: "محتوى فيلم قصير",
       ytLink: "https://www.youtube.com/embed/BReSjnA4UsQ",
       cat_en: "Short Film",
       cat_ar: "فيلم قصير"
@@ -233,15 +224,6 @@ const WORKS_CONFIG = {
       desc_en: "Short video content",
       desc_ar: "محتوى فيديو قصير",
       ytLink: "https://www.youtube.com/embed/ShAo4kqdaHg",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/uq9KRSbQyD0",
       cat_en: "Reels",
       cat_ar: "ريلز"
     },
