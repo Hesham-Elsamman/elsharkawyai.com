@@ -5,277 +5,7 @@
  * ==========================================================================
  */
 
-const WORKS_CONFIG = {
-  ads: [
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/wwb7-2r5Y6U",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/6ysfE2nBaZE",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/g5dL52ky-OM",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/7vtxojXTrFA",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/j1PP9i5po2E",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/6nwjtfsJqqI",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "AD for Dream City Perfume",
-      title_ar: "إعلان لعطر دريم سيتي",
-      desc_en: "A premium advertisement for Dream City perfume reflecting elegance and charm",
-      desc_ar: "إعلان مميز لعطر دريم سيتي يعكس الأناقة والجاذبية",
-      ytLink: "https://www.youtube.com/embed/-amrEpPsWkI",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "M2K Hair Product Ad",
-      title_ar: "إعلان M2K منتج شعر",
-      desc_en: "An attractive advertisement for M2K hair product",
-      desc_ar: "إعلان جذاب لمنتج الشعر M2K",
-      ytLink: "https://www.youtube.com/embed/mjYvXkYhPq4",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "YalaBook Advertisement",
-      title_ar: "إعلان لـ YalaBook",
-      desc_en: "Promotional advertisement for YalaBook services",
-      desc_ar: "إعلان ترويجي لخدمات YalaBook",
-      ytLink: "https://www.youtube.com/embed/XOf3p_xOB-0",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Commercial Advertisement",
-      title_ar: "إعلان تجاري",
-      desc_en: "Professional commercial advertisement",
-      desc_ar: "إعلان تجاري احترافي",
-      ytLink: "https://www.youtube.com/embed/VG6PfDQ0LDo",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/aq2I41fZvfE",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/yxrUNq5vjeE",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/80nZhXA625U",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/uah-KtVx_Ek",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/Y9-4i4GI0Gs",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/35zbuBP3n4Q",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    },
-    {
-      title_en: "Ad Production",
-      title_ar: "إنتاج إعلاني",
-      desc_en: "Commercial advertisement",
-      desc_ar: "إعلان تجاري",
-      ytLink: "https://www.youtube.com/embed/7o4fxxEsKC4",
-      cat_en: "Ad Production",
-      cat_ar: "إنتاج إعلانات"
-    }
-  ],
-  films: [
-    {
-      title_en: "Film Production",
-      title_ar: "إنتاج فيلم",
-      desc_en: "Short film content",
-      desc_ar: "محتوى فيلم قصير",
-      ytLink: "https://www.youtube.com/embed/tPjJbhx1vnA",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "Film Production",
-      title_ar: "إنتاج فيلم",
-      desc_en: "Short film content",
-      desc_ar: "محتوى فيلم قصير",
-      ytLink: "https://www.youtube.com/embed/P5sgFwf3usg",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "Film Production",
-      title_ar: "إنتاج فيلم",
-      desc_en: "Short film content",
-      desc_ar: "محتوى فيلم قصير",
-      ytLink: "https://www.youtube.com/embed/BReSjnA4UsQ",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    },
-    {
-      title_en: "AI Generated Short Film",
-      title_ar: "فيلم قصير صُنع بالذكاء الاصطناعي",
-      desc_en: "...where ideas turn into vibrant scenes",
-      desc_ar: "…حيث تتحول الأفكار إلى مشاهد نابضة بالحياة",
-      ytLink: "https://www.youtube.com/embed/HveAleW0aGs",
-      cat_en: "Short Film",
-      cat_ar: "فيلم قصير"
-    }
-  ],
-  reels: [
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/71QMwkb74Es",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/WGDPb6KOHLM",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/ShAo4kqdaHg",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: "محتوى فيديو قصير",
-      ytLink: "https://www.youtube.com/embed/XSWrMbPmUeM",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-    {
-      title_en: "Reel",
-      title_ar: "ريل",
-      desc_en: "Short video content",
-      desc_ar: " قصير",
-      ytLink: "https://www.youtube.com/embed/4DFsnmcr8TQ",
-      cat_en: "Reels",
-      cat_ar: "ريلز"
-    },
-  ],
-  cinema: [
-    {
-      title_en: "Cinematic Production",
-      title_ar: "إنتاج سينمائي",
-      desc_en: "Cinematic video content.",
-      desc_ar: "محتوى فيديو سينمائي.",
-      ytLink: "https://www.youtube.com/embed/JX3ewG_PtM0",
-      cat_en: "Cinematic",
-      cat_ar: "سينمائي"
-    },
-    {
-      title_en: "Cinematic Production",
-      title_ar: " سينمائي",
-      desc_en: "Cinematic video content.",
-      desc_ar: "  سينمائي.",
-      ytLink: "https://www.youtube.com/embed/IqYxRfP0XyY",
-      cat_en: "Cinematic",
-      cat_ar: "سينمائي"
-    },
-    {
-      title_en: "Cinematic Production",
-      title_ar: "إنتاج سينمائي",
-      desc_en: "Cinematic video content.",
-      desc_ar: " سينمائي.",
-      ytLink: "https://www.youtube.com/embed/Y-aAAO2D1go",
-      cat_en: "Cinematic",
-      cat_ar: "سينمائي"
-    }
-  ]
-};
+// CONFIG MOVED TO JSON FILES
 
 // ─── STATE MANAGEMENT ────────────────────────────────────────────────────────
 // The hero animation fires ONLY when BOTH the preloader is done AND the video plays
@@ -482,59 +212,72 @@ function setupScrollAnimations() {
 }
 
 // ─── VIDEO GRID RENDER ────────────────────────────────────────────────────────
-function renderVideos() {
+async function renderVideos() {
   const isAr = document.documentElement.getAttribute('lang') === 'ar';
 
   // Render each category
   const categories = ['ads', 'films', 'reels', 'cinema'];
   
-  categories.forEach(cat => {
+  for (const cat of categories) {
     const grid = document.getElementById(`grid-${cat}`);
-    if (!grid) return;
+    if (!grid) continue;
 
-    grid.innerHTML = WORKS_CONFIG[cat].map((p, i) => `
-      <div class="video-card-wrapper" style="opacity:0;transform:translateY(50px)">
-        <div class="video-card group relative p-3 md:p-4 rounded-[28px] bg-base-200/40 border border-base-content/5 transition-all duration-500 hover:bg-base-200 hover:-translate-y-2 cursor-pointer">
-          
-          <!-- Elegant Moving Borders (Top & Bottom) -->
-          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
-          <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
+    try {
+      const response = await fetch(`src/vidLinks/${cat}.json`);
+      let data = await response.json();
+      
+      // LIFO - reverse the array so newest items are first
+      data = data.reverse();
 
-          <!-- Video Container -->
-          <div class="relative w-full rounded-2xl overflow-hidden bg-black shadow-inner" style="aspect-ratio:16/9">
+      grid.innerHTML = data.map((p, i) => `
+        <div class="video-card-wrapper" style="opacity:0;transform:translateY(50px)">
+          <div class="video-card group relative p-3 md:p-4 rounded-[28px] bg-base-200/40 border border-base-content/5 transition-all duration-500 hover:bg-base-200 hover:-translate-y-2 cursor-pointer">
             
-            <iframe
-              data-src="${p.ytLink}?rel=0&modestbranding=1&autoplay=1"
-              src="${p.ytLink}?rel=0&modestbranding=1"
-              title="Video"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="w-full h-full bg-black pointer-events-none"
-              loading="lazy">
-            </iframe>
+            <!-- Elegant Moving Borders (Top & Bottom) -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-2/3 rounded-full shadow-[0_0_15px_rgba(39,172,244,0.6)] z-20"></div>
 
-            <div class="absolute inset-0 z-10 bg-transparent"
-                 onclick="const iframe = this.previousElementSibling; iframe.src = iframe.getAttribute('data-src'); iframe.classList.remove('pointer-events-none'); this.style.display='none';">
+            <!-- Video Container -->
+            <div class="relative w-full rounded-2xl overflow-hidden bg-black shadow-inner" style="aspect-ratio:16/9">
+              
+              <iframe
+                data-src="${p.ytLink}?rel=0&modestbranding=1&autoplay=1"
+                src="${p.ytLink}?rel=0&modestbranding=1"
+                title="Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="w-full h-full bg-black pointer-events-none"
+                loading="lazy">
+              </iframe>
+
+              <div class="absolute inset-0 z-10 bg-transparent"
+                   onclick="const iframe = this.previousElementSibling; iframe.src = iframe.getAttribute('data-src'); iframe.classList.remove('pointer-events-none'); this.style.display='none';">
+              </div>
+
             </div>
-
           </div>
         </div>
-      </div>
-    `).join('');
+      `).join('');
 
-    // GSAP reveal for each grid explicitly to guarantee staggering
-    gsap.to(grid.querySelectorAll('.video-card-wrapper'), {
-      opacity: 1, 
-      y: 0, 
-      duration: 0.8, 
-      stagger: 0.3, // 0.3s solid delay between each card
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: grid,
-        start: "top 85%",
-        toggleActions: "play none none reverse"
-      }
-    });
-  });
+      // GSAP reveal for each grid explicitly to guarantee staggering
+      gsap.to(grid.querySelectorAll('.video-card-wrapper'), {
+        opacity: 1, 
+        y: 0, 
+        duration: 0.8, 
+        stagger: 0.3, // 0.3s solid delay between each card
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: grid,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    } catch (error) {
+      console.error(`Error loading ${cat}.json:`, error);
+    }
+  }
+  
+  // Refresh ScrollTrigger after all dynamic elements are added
+  ScrollTrigger.refresh();
 }
