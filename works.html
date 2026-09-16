@@ -27,15 +27,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <!-- Scripts -->
-  <script src="src/js/preloader.js"></script>
+  <script src="src/js/preloader.js?v=1.2.1"></script>
 
   <!-- Styles -->
-  <link href="src/css/output.css" rel="stylesheet" />
-  <link href="src/css/style.css" rel="stylesheet" />
-  <link href="src/css/navbar.css" rel="stylesheet" />
-  <link href="src/css/footer.css" rel="stylesheet" />
-  <link href="src/css/works.css" rel="stylesheet" />
-  <script src="src/js/lang.js"></script>
+  <link href="src/css/output.css?v=1.2.1" rel="stylesheet" />
+  <link href="src/css/style.css?v=1.2.1" rel="stylesheet" />
+  <link href="src/css/navbar.css?v=1.2.1" rel="stylesheet" />
+  <link href="src/css/footer.css?v=1.2.1" rel="stylesheet" />
+  <link href="src/css/works.css?v=1.2.1" rel="stylesheet" />
+  <script src="src/js/lang.js?v=1.2.1"></script>
   <title>Sharkawy Ai - Works Portfolio</title>
 </head>
 
@@ -66,6 +66,17 @@
         </h1>
         <p class="works-hero-subtitle text-base-content/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-6 drop-shadow-md font-medium"
           data-i18n="works.hero.subtitle"></p>
+
+        <!-- Watch Showreel Button -->
+        <div class="mt-10 flex justify-center">
+          <button id="showreel-btn" class="showreel-btn" onclick="openShowreelModal()" aria-label="Watch Showreel">
+            <div class="showreel-btn-icon">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <span data-i18n="works.hero.cta">Watch Showreel</span>
+          </button>
+        </div>
+
       </div>
 
     </section>
@@ -215,11 +226,68 @@
 
   <footer id="main-footer"></footer>
 
-  <script src="src/js/theme.js"></script>
-  <script src="src/js/navbar.js"></script>
-  <script src="src/js/footer.js"></script>
-  <script src="src/js/cursor.js"></script>
-  <script src="src/js/works.js?v=1.0.2"></script>
+  <!-- ═══ SHOWREEL MODAL ═══ -->
+  <div id="showreel-modal" role="dialog" aria-modal="true" aria-label="Showreel Player">
+
+    <!-- Backdrop -->
+    <div class="modal-backdrop" onclick="closeShowreelModal()"></div>
+
+    <!-- Content wrapper -->
+    <div class="modal-container">
+
+      <!-- ── Left: Player ── -->
+      <div class="modal-player-area">
+
+        <!-- Info bar -->
+        <div class="modal-player-header">
+          <div class="modal-video-info">
+            <p id="modal-video-cat" class="modal-video-cat"></p>
+            <h3 id="modal-video-title" class="modal-video-title"></h3>
+          </div>
+          <button class="modal-close-btn" onclick="closeShowreelModal()" aria-label="Close modal">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+            <span>Close</span>
+          </button>
+        </div>
+
+        <!-- Iframe + nav arrows -->
+        <div class="modal-iframe-wrap">
+          <iframe id="modal-iframe" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+
+          <button class="modal-nav-btn modal-nav-prev" onclick="navigateModal(-1)" aria-label="Previous video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+          </button>
+          <button class="modal-nav-btn modal-nav-next" onclick="navigateModal(1)" aria-label="Next video">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ── Right: Playlist Sidebar ── -->
+      <div class="modal-sidebar">
+        <div class="modal-sidebar-header">Playlist</div>
+        <div id="modal-accordion" class="modal-accordion"></div>
+      </div>
+
+    </div>
+  </div>
+  <!-- ═══ END MODAL ═══ -->
+
+  <script src="src/js/theme.js?v=1.2.1"></script>
+  <script src="src/js/navbar.js?v=1.2.1"></script>
+  <script src="src/js/footer.js?v=1.2.1"></script>
+  <script src="src/js/cursor.js?v=1.2.1"></script>
+  <script src="src/js/works.js?v=1.2.1"></script>
   <script src="node_modules/flyonui/flyonui.js"></script>
 </body>
 

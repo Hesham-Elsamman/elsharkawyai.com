@@ -215,6 +215,24 @@
   }
 }
 @layer utilities {
+  .modal {
+    pointer-events: none;
+    position: fixed;
+    inset: calc(0.25rem * 0);
+    z-index: 80;
+    margin: calc(0.25rem * 0);
+    display: grid;
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: calc(0.25rem * 4);
+    opacity: 0%;
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .carousel-prev {
     position: absolute;
     inset-block: calc(0.25rem * 0);
@@ -1837,6 +1855,30 @@
       }
     }
   }
+  .stack {
+    display: inline-grid;
+    place-items: center;
+    align-items: flex-end;
+    & > * {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      height: 100%;
+      width: 100%;
+      opacity: 60%;
+      transform: translateY(14%) scale(0.9);
+      z-index: 1;
+    }
+    & > *:nth-child(2) {
+      opacity: 80%;
+      transform: translateY(7%) scale(0.95);
+      z-index: 2;
+    }
+    & > *:nth-child(1) {
+      opacity: 100%;
+      transform: translateY(0) scale(1) translateX(0);
+      z-index: 3;
+    }
+  }
   .dropdown-menu {
     z-index: 10;
     margin-top: calc(0.25rem * 2);
@@ -2029,6 +2071,9 @@
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -2428,6 +2473,9 @@
   }
   .flex-1 {
     flex: 1;
+  }
+  .flex-shrink {
+    flex-shrink: 1;
   }
   .flex-shrink-0 {
     flex-shrink: 0;
@@ -3559,6 +3607,10 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
   .carousel-slide {
     transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -3602,6 +3654,10 @@
   .duration-700 {
     --tw-duration: 700ms;
     transition-duration: 700ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .ease-out {
     --tw-ease: var(--ease-out);
