@@ -135,7 +135,7 @@ function prepareHeroText() {
         gsap.to(char, {
           y: 0, scale: 1,
           color: "#ffffff",
-          textShadow: "0 0 10px rgba(39,172,244,0.3)",
+          textShadow: "0 0 10px color-mix(in srgb, var(--color-primary) 30%, transparent)",
           duration: 0.3, ease: "power2.out"
         });
       });
