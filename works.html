@@ -34,7 +34,7 @@
   <link href="src/css/style.css?v=1.2.1" rel="stylesheet" />
   <link href="src/css/navbar.css?v=1.2.1" rel="stylesheet" />
   <link href="src/css/footer.css?v=1.2.1" rel="stylesheet" />
-  <link href="src/css/works.css?v=1.2.1" rel="stylesheet" />
+  <link href="src/css/works.css?v=1.2.2" rel="stylesheet" />
   <script src="src/js/lang.js?v=1.2.1"></script>
   <title>Sharkawy Ai - Works Portfolio</title>
 </head>
@@ -46,37 +46,132 @@
 
     <!-- 1. Hero Section -->
     <section id="works-hero"
-      class="relative min-h-screen flex flex-col items-center justify-center px-5 md:px-20 overflow-hidden bg-base-100 z-0">
+      class="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-20 overflow-hidden bg-base-100 z-0">
 
-      <!-- Background video -->
-      <div class="absolute inset-0 z-0">
-        <video id="hero-bg-video" class="w-full h-full object-cover grayscale" muted loop playsinline preload="none"
-          style="background: linear-gradient(to bottom, rgba(14, 17, 27, 0.6), rgba(14, 17, 27, 0.9));">
+      <!-- Background video & overlays -->
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <video id="hero-bg-video" class="w-full h-full object-cover hero-video-cinematic" muted loop playsinline
+          preload="none">
           <source src="src/assets/vids/Video.mp4" type="video/mp4" />
         </video>
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="absolute inset-0 bg-gradient-to-b from-base-100/60 via-base-100/30 to-base-100"></div>
+        <!-- Center radial ambient glow -->
+        <div class="hero-glow-orb top-1/2 left-1/2"></div>
+        <!-- Multi-stop cinematic dark vignette -->
+        <div class="absolute inset-0 hero-vignette"></div>
+        <!-- High-tech monitor scanlines -->
+        <div class="absolute inset-0 hero-scanlines opacity-35"></div>
+        <!-- Smooth top fade under navbar -->
+        <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-base-100/90 via-base-100/40 to-transparent">
+        </div>
+        <!-- Seamless bottom fade into categories -->
+        <div class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-base-100 via-base-100/80 to-transparent">
+        </div>
       </div>
 
-      <!-- Content wrapper -->
-      <div class="relative z-10 text-center px-4">
+      <!-- Director HUD Corner Accents (Desktop) -->
+      <div class="hidden lg:flex items-center absolute top-28 left-8 xl:left-14 z-20 hero-hud-element">
+        <span class="rec-dot"></span>
+        <span class="text-white/90 font-bold">REC</span>
+        <span class="text-white/30">•</span>
+        <span class="text-white/60">4K DCI • 60FPS</span>
+      </div>
+
+      <div class="hidden lg:flex items-center absolute top-28 right-8 xl:right-14 z-20 hero-hud-element">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          class="text-primary flex-shrink-0">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        <span class="text-white/90 font-bold">SHOWCASE 2026</span>
+        <span class="text-white/30">•</span>
+        <span class="text-primary font-bold">DIRECTOR</span>
+      </div>
+
+      <!-- Main Content wrapper -->
+      <div class="relative z-10 flex flex-col items-center text-center px-4 max-w-5xl mx-auto pt-24 pb-20">
+
+        <!-- Big Display Headline -->
         <h1
-          class="works-hero-title text-center font-black uppercase leading-[0.9] text-base-content drop-shadow-2xl cursor-default"
-          style="font-size: clamp(2rem, 5vw, 4rem); letter-spacing: -0.02em;" data-i18n="works.hero.title">
+          class="works-hero-title text-center font-black uppercase text-white drop-shadow-[0_12px_45px_rgba(0,0,0,0.95)] cursor-default select-none"
+          style="font-size: clamp(2.4rem, 6.5vw, 5.5rem); line-height: 1.02; letter-spacing: -0.03em;"
+          data-i18n="works.hero.title">
         </h1>
-        <p class="works-hero-subtitle text-base-content/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mt-6 drop-shadow-md font-medium"
+
+        <!-- Subtitle -->
+        <p class="works-hero-subtitle text-white/75 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mt-6 drop-shadow-lg font-normal tracking-wide"
           data-i18n="works.hero.subtitle"></p>
 
-        <!-- Watch Showreel Button -->
-        <div class="mt-10 flex justify-center">
-          <button id="showreel-btn" class="showreel-btn" onclick="openShowreelModal()" aria-label="Watch My Work">
+        <!-- Action Group (Primary Showreel CTA + Secondary Navigation) -->
+        <div class="hero-action-group mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-5">
+
+          <!-- Watch Showreel CTA Button -->
+          <button id="showreel-btn" class="showreel-btn group" onclick="openShowreelModal()" aria-label="Watch My Work">
             <div class="showreel-btn-icon">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                <polygon points="5,3 19,12 5,21" />
+              </svg>
             </div>
-            <span data-i18n="works.hero.cta">Watch My Work</span>
+            <span class="showreel-btn-text" data-i18n="works.hero.cta">Watch My Work</span>
+            <span class="showreel-pill-tag">4K REEL</span>
+          </button>
+
+          <!-- Secondary Quick Link: Explore Disciplines -->
+          <button type="button"
+            onclick="document.getElementById('works-categories').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="hero-secondary-btn group" aria-label="Explore Categories">
+            <span data-i18n="works.hero.explore_btn">Explore Disciplines</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:translate-y-0.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Floating Disciplines Quick Strip -->
+        <div
+          class="hero-disciplines-bar mt-12 hidden sm:flex items-center gap-1.5 p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md border border-white/10 shadow-2xl">
+          <button type="button"
+            onclick="document.getElementById('section-ads').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="hero-discipline-pill group">
+            <span class="pill-dot"></span>
+            <span data-i18n="works.cat.ads.title">Ad Production</span>
+          </button>
+          <span class="text-white/20">•</span>
+          <button type="button"
+            onclick="document.getElementById('section-films').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="hero-discipline-pill group">
+            <span class="pill-dot"></span>
+            <span data-i18n="works.cat.films.title">Short Films</span>
+          </button>
+          <span class="text-white/20">•</span>
+          <button type="button"
+            onclick="document.getElementById('section-reels').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="hero-discipline-pill group">
+            <span class="pill-dot"></span>
+            <span data-i18n="works.cat.reels.title">Reels & Clips</span>
+          </button>
+          <span class="text-white/20">•</span>
+          <button type="button"
+            onclick="document.getElementById('section-cinema').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="hero-discipline-pill group">
+            <span class="pill-dot"></span>
+            <span data-i18n="works.cat.cinema.title">Cinematic</span>
           </button>
         </div>
 
+      </div>
+
+      <!-- Animated Scroll Prompt -->
+      <div onclick="document.getElementById('works-categories').scrollIntoView({behavior: 'smooth', block: 'start'})"
+        class="hero-scroll-indicator absolute bottom-5 left-1/2 -translate-x-1/2 cursor-pointer flex flex-col items-center gap-2 group z-20"
+        aria-label="Scroll to explore">
+        <span
+          class="text-[10px] uppercase tracking-[0.3em] text-white/50 group-hover:text-primary transition-colors font-mono"
+          data-i18n="works.hero.scroll">Explore</span>
+        <div class="hero-mouse-icon">
+          <div class="hero-mouse-wheel"></div>
+        </div>
       </div>
 
     </section>
@@ -86,7 +181,8 @@
 
       <!-- Header -->
       <div class="mb-10">
-        <p class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3" data-i18n="works.categories.label"></p>
+        <p class="text-primary text-xs font-bold uppercase tracking-[0.4em] mb-3" data-i18n="works.categories.label">
+        </p>
         <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.categories.title"></h2>
       </div>
 
@@ -97,43 +193,61 @@
         <div class="flex flex-col md:flex-row gap-3 lg:flex-1">
 
           <!-- Card 1: Ad Production (wide ~65%) -->
-          <div onclick="document.getElementById('section-ads').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+          <div onclick="document.getElementById('section-ads').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
             <img src="src/assets/imgs/work cat/ads.jpeg" alt="Ad Production"
               class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div
+              class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            </div>
             <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
               <div class="flex items-center justify-end">
-                <span class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500" data-i18n="works.cat.ads.title">Ad Production</span>
+                <span
+                  class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500"
+                  data-i18n="works.cat.ads.title">Ad Production</span>
               </div>
               <div>
-                <h3 class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                <h3
+                  class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
                   data-i18n="works.cat.ads.title">Ad Production</h3>
-                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium"
-                  data-i18n="works.cat.ads.desc">TV commercials and social media campaigns built for impact.</p>
-                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium" data-i18n="works.cat.ads.desc">TV
+                  commercials and social media campaigns built for impact.</p>
+                <div
+                  class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out">
+                </div>
               </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out">
+            </div>
           </div>
 
           <!-- Card 2: Short Films (narrow ~35%) -->
-          <div onclick="document.getElementById('section-films').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+          <div onclick="document.getElementById('section-films').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
             <img src="src/assets/imgs/work cat/short.jpeg" alt="Short Films"
               class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div
+              class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            </div>
             <div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
 
               <div>
-                <h3 class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                <h3
+                  class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
                   data-i18n="works.cat.films.title">Short Films</h3>
-                <p class="text-white/65 text-sm leading-relaxed font-medium"
-                  data-i18n="works.cat.films.desc">Narrative cinema — stories that carry real weight.</p>
-                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                <p class="text-white/65 text-sm leading-relaxed font-medium" data-i18n="works.cat.films.desc">Narrative
+                  cinema — stories that carry real weight.</p>
+                <div
+                  class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out">
+                </div>
               </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out">
+            </div>
           </div>
 
         </div>
@@ -142,43 +256,61 @@
         <div class="flex flex-col md:flex-row gap-3 lg:flex-1">
 
           <!-- Card 3: Reels (narrow) -->
-          <div onclick="document.getElementById('section-reels').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+          <div onclick="document.getElementById('section-reels').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[40%] lg:w-[35%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
             <img src="src/assets/imgs/work cat/reels.jpeg" alt="Reels & Clips"
               class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div
+              class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            </div>
             <div class="absolute inset-0 z-10 p-6 flex flex-col justify-end">
 
               <div>
-                <h3 class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                <h3
+                  class="text-xl md:text-2xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
                   data-i18n="works.cat.reels.title">Reels & Clips</h3>
-                <p class="text-white/65 text-sm leading-relaxed font-medium"
-                  data-i18n="works.cat.reels.desc">Short-form vertical content engineered for the scroll.</p>
-                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                <p class="text-white/65 text-sm leading-relaxed font-medium" data-i18n="works.cat.reels.desc">Short-form
+                  vertical content engineered for the scroll.</p>
+                <div
+                  class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out">
+                </div>
               </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out">
+            </div>
           </div>
 
           <!-- Card 4: Cinematic Production (wide) -->
-          <div onclick="document.getElementById('section-cinema').scrollIntoView({behavior: 'smooth', block: 'start'})" class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
+          <div onclick="document.getElementById('section-cinema').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            class="category-card group relative overflow-hidden rounded-2xl cursor-pointer w-full md:w-[60%] lg:w-[65%] min-h-[220px] md:min-h-[260px] lg:min-h-0">
             <img src="src/assets/imgs/work cat/cinematic.jpeg" alt="Cinematic Production"
               class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-            <div class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div
+              class="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+            </div>
             <div class="absolute inset-0 z-10 p-6 flex flex-col justify-between">
               <div class="flex items-center justify-end">
-                <span class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500" data-i18n="works.cat.cinema.title">Cinematic</span>
+                <span
+                  class="text-white/30 text-[9px] uppercase tracking-widest group-hover:text-primary/60 transition-colors duration-500"
+                  data-i18n="works.cat.cinema.title">Cinematic</span>
               </div>
               <div>
-                <h3 class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
+                <h3
+                  class="text-2xl md:text-3xl font-black uppercase text-white leading-none mb-2 group-hover:text-primary transition-colors duration-300 drop-shadow-xl"
                   data-i18n="works.cat.cinema.title">Cinematic Production</h3>
-                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium"
-                  data-i18n="works.cat.cinema.desc">Full-scale production from concept to final grade.</p>
-                <div class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out"></div>
+                <p class="text-white/65 text-sm leading-relaxed max-w-sm font-medium" data-i18n="works.cat.cinema.desc">
+                  Full-scale production from concept to final grade.</p>
+                <div
+                  class="w-10 h-px bg-primary mt-4 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out">
+                </div>
               </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-[2px] bg-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out">
+            </div>
           </div>
 
         </div>
@@ -188,7 +320,7 @@
 
     <!-- 3. Videos Sections -->
     <div id="video-sections-container" class="bg-base-200/30">
-      
+
       <!-- Section: Ads -->
       <section id="section-ads" class="py-16 px-5 md:px-16 pt-24">
         <div class="mb-10">
@@ -216,7 +348,8 @@
       <!-- Section: Cinema -->
       <section id="section-cinema" class="py-16 px-5 md:px-16 border-t border-base-content/5">
         <div class="mb-10">
-          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.cinema.title">Cinematic Production</h2>
+          <h2 class="text-3xl md:text-4xl font-black uppercase" data-i18n="works.cat.cinema.title">Cinematic Production
+          </h2>
         </div>
         <div id="grid-cinema" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
       </section>
@@ -246,7 +379,8 @@
           </div>
           <button class="modal-close-btn" onclick="closeShowreelModal()" aria-label="Close modal">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
             <span>Close</span>
           </button>
@@ -260,13 +394,15 @@
           </iframe>
 
           <button class="modal-nav-btn modal-nav-prev" onclick="navigateModal(-1)" aria-label="Previous video">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
           <button class="modal-nav-btn modal-nav-next" onclick="navigateModal(1)" aria-label="Next video">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6" />
             </svg>
           </button>
         </div>
@@ -287,7 +423,7 @@
   <script src="src/js/navbar.js?v=1.2.1"></script>
   <script src="src/js/footer.js?v=1.2.1"></script>
   <script src="src/js/cursor.js?v=1.2.1"></script>
-  <script src="src/js/works.js?v=1.2.1"></script>
+  <script src="src/js/works.js?v=1.2.2"></script>
   <script src="node_modules/flyonui/flyonui.js"></script>
 </body>
 

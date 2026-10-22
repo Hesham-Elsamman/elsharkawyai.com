@@ -151,31 +151,63 @@ function runHeroEntrance() {
   const isArabic = document.documentElement.getAttribute('lang') === 'ar';
   const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-  tl.set([".works-hero-title", ".works-hero-subtitle"], { autoAlpha: 1 });
+  tl.set([
+    ".works-hero-title",
+    ".works-hero-subtitle",
+    ".hero-action-group",
+    ".hero-disciplines-bar",
+    ".hero-hud-element",
+    ".hero-scroll-indicator"
+  ], { autoAlpha: 1 });
 
+  // 1. HUD badges fade in smoothly
+  tl.fromTo(".hero-hud-element",
+    { autoAlpha: 0, y: -12 },
+    { autoAlpha: 1, y: 0, duration: 1, stagger: 0.15 },
+    0
+  );
+
+  // 2. Hero Title
   if (!isArabic) {
     tl.fromTo(".works-hero-title .char",
-      { y: 100, autoAlpha: 0, skewY: 12, filter: "blur(12px)" },
-      { y: 0,   autoAlpha: 1, skewY: 0,  filter: "blur(0px)", duration: 1.5, stagger: 0.07 }
+      { y: 90, autoAlpha: 0, skewY: 10, filter: "blur(12px)" },
+      { y: 0,  autoAlpha: 1, skewY: 0,  filter: "blur(0px)", duration: 1.4, stagger: 0.05 },
+      0.2
     );
   } else {
     tl.fromTo(".works-hero-title",
-      { y: 60, autoAlpha: 0, filter: "blur(10px)" },
-      { y: 0,  autoAlpha: 1, filter: "blur(0px)", duration: 1.8 }
+      { y: 50, autoAlpha: 0, filter: "blur(10px)" },
+      { y: 0,  autoAlpha: 1, filter: "blur(0px)", duration: 1.6 },
+      0.35
     );
   }
 
+  // 4. Subtitle
   tl.fromTo(".works-hero-subtitle",
-    { y: 30, autoAlpha: 0, filter: "blur(6px)" },
-    { y: 0,  autoAlpha: 1, filter: "blur(0px)", duration: 1.4 },
+    { y: 25, autoAlpha: 0, filter: "blur(6px)" },
+    { y: 0,  autoAlpha: 1, filter: "blur(0px)", duration: 1.2 },
     "-=0.6"
   );
 
-  // Animate the Watch button in last
-  tl.fromTo("#showreel-btn",
-    { y: 24, autoAlpha: 0 },
-    { y: 0,  autoAlpha: 1, duration: 1, ease: "back.out(1.5)" },
-    "-=0.7"
+  // 5. Actions (Showreel CTA & Secondary)
+  tl.fromTo(".hero-action-group",
+    { y: 24, autoAlpha: 0, scale: 0.95 },
+    { y: 0,  autoAlpha: 1, scale: 1, duration: 1, ease: "back.out(1.6)" },
+    "-=0.6"
+  );
+
+  // 6. Disciplines quick strip
+  tl.fromTo(".hero-disciplines-bar",
+    { y: 20, autoAlpha: 0 },
+    { y: 0,  autoAlpha: 1, duration: 1 },
+    "-=0.5"
+  );
+
+  // 7. Scroll indicator
+  tl.fromTo(".hero-scroll-indicator",
+    { autoAlpha: 0, y: 15 },
+    { autoAlpha: 1, y: 0, duration: 1.1 },
+    "-=0.5"
   );
 }
 
